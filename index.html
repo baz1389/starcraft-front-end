@@ -5,114 +5,204 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Starcraft</title>
     <link rel="stylesheet" type="text/css" href="assets/styles/style.css">
-     <script src="assets/js/jquery.js" type="text/javascript" defer charset="utf-8"></script>
-      <script src="assets/js/handlebars.js" type="text/javascript" defer charset="utf-8"></script>
-
+    <script src="assets/js/jquery.js" type="text/javascript" defer charset="utf-8"></script>
+    <script src="assets/js/handlebars.js" type="text/javascript" defer charset="utf-8"></script>
   </head>
   <body>
 
     <div class="wrapper">
 
-    <section class="span_4_of_12 pad-lft">
-      <!-- begin hero -->
-      <!-- hero animated zoomIn duck-intro -->
-      <div class="landingPage">
-        <h2>Starcraft Guide</h2>
-        <h5>Climbing the ladder to Bronze.</h5>
-        <p>Already a member? <a href="#login" class="login-a">Login</a>.</p>
-        <p>First time here? <a href="#register" class="register-a">Register</a>.</p>
-      </div>
-      <!-- end hero -->
-    </section>
+      <section class="span_4_of_12 pad-lft">
 
-    <!-- begin user messages box -->
-    <div class=" span_4_of_12 right-fix user-messages hidden"></div>
-    <!-- end user messages box -->
-
-    <!-- begin register -->
-    <div class="API-register hidden">
-      <div class="register-login">
-        <h4>Register</h4>
-        <form id="register" enctype="multipart/form-data" charset="utf-8">
-          <label for="username">Username</label>
-          <input type="text" name="username" placeholder="username">
-          <label for="password">Password</label>
-          <input type="password" name="password" placeholder="password">
-          <input type="submit" name="register" value="Register">
-        </form>
-        <p>Already a member? <a href="#" class="login-a2"> Login.</a></p>
-      </div>
-    </div>
-    <!-- end register -->
-
-    <!-- begin login -->
-    <div class="API-login hidden">
-      <div class="register-login">
-        <h4>Login</h4>
-        <form id="login" enctype="multipart/form-data" charset="utf-8">
-          <label for="username">Username</label>
-          <input name="username" type="text" placeholder="username">
-          <label for="password">Password</label>
-          <input name="password" type="password" placeholder="password">
-          <input name="login" type="submit" value="Login">
-        </form>
-        <p>First time here? <a href="#" class="register-a2"> Register.</a></p>
-      </div>
-    </div>
-    <!-- end login -->
-
-    <!-- create guide -->
-    <div id="createGuideContainer">
-      <form id="createNewGuide">
-        <div class="row">
-          <div class="createGuide">
-            <label for="guideTitle">Guide Title</label>
-            <input class="u-full-width" type="text" placeholder="Guide Title..." id="titleInput">
-          </div>
-          <div class="createGuide">
-            <label for="selectPlayerRace">Player Race</label>
-            <select class="u-full-width" id="selectPlayerRace">
-              <option value="Option 1">Terran</option>
-              <option value="Option 2">Protoss</option>
-              <option value="Option 3">Zerg</option>
-            </select>
-          </div>
-          <div class="createGuide">
-            <label for="selectMatchup">Matchup</label>
-            <select class="u-full-width" id="selectMatchup">
-              <option value="Option 1">TvT</option>
-              <option value="Option 2">TvP</option>
-              <option value="Option 3">TvZ</option>
-              <option value="Option 4">PvT</option>
-              <option value="Option 5">PvP</option>
-              <option value="Option 6">PvZ</option>
-              <option value="Option 7">ZvT</option>
-              <option value="Option 8">ZvP</option>
-              <option value="Option 9">ZvZ</option>
-              <option value="Option 10">TvT / TvP</option>
-              <option value="Option 11">TvT / TvZ</option>
-              <option value="Option 12">TvP / TvZ</option>
-              <option value="Option 13">PvP / PvT</option>
-              <option value="Option 14">PvP / PvZ</option>
-              <option value="Option 15">PvT / PvZ</option>
-              <option value="Option 13">ZvZ / ZvT</option>
-              <option value="Option 14">ZvZ / ZvP</option>
-              <option value="Option 15">ZvT / ZvP</option>
-              <option value="Option 13">TvT / TvP / TvZ</option>
-              <option value="Option 14">PvP / PvT / PvZ</option>
-              <option value="Option 15">ZvZ / ZvT / ZvP</option>
-            </select>
-          </div>
+        <!-- begin landingPage -->
+        <div class="landingPage">
+          <h2>Starcraft Guide</h2>
+          <h5>Climbing the ladder to Bronze.</h5>
+          <p>Already a member? <a href="#login" class="login-a">Login</a>.</p>
+          <p>First time here? <a href="#register" class="register-a">Register</a>.</p>
         </div>
-        <label for="guideDescription">Description</label>
-        <textarea class="u-full-width" placeholder="Your guide here..." id="descriptionInput"></textarea>
-        <input class="button-primary" type="submit" value="Create!">
-      </form>
+        <!-- end landingPage -->
+
+      </section>
+
+      <!-- begin user messages box -->
+      <div class=" span_4_of_12 right-fix user-messages hidden"></div>
+      <!-- end user messages box -->
+
+      <!-- begin register -->
+      <div class="API-register hidden">
+        <div class="register-login">
+          <h4>Register</h4>
+          <form id="register" enctype="multipart/form-data" charset="utf-8">
+            <label for="username">Username</label>
+            <input type="text" name="username" placeholder="username">
+            <label for="password">Password</label>
+            <input type="password" name="password" placeholder="password">
+            <input type="submit" name="register" value="Register">
+          </form>
+          <p>Already a member? <a href="#" class="login-a2"> Login.</a></p>
+        </div>
+      </div>
+      <!-- end register -->
+
+      <!-- begin login -->
+      <div class="API-login hidden">
+        <div class="register-login">
+          <h4>Login</h4>
+          <form id="login" enctype="multipart/form-data" charset="utf-8">
+            <label for="username">Username</label>
+            <input name="username" type="text" placeholder="username">
+            <label for="password">Password</label>
+            <input name="password" type="password" placeholder="password">
+            <input name="login" type="submit" value="Login">
+          </form>
+          <p>First time here? <a href="#" class="register-a2"> Register.</a></p>
+        </div>
+      </div>
+      <!-- end login -->
+
+      <!-- create guide -->
+        <div id="createGuideContainer">
+        <form id="createNewGuide">
+          <div class="row">
+            <div class="createGuide">
+              <label for="guideTitle">Guide Title</label>
+              <input class="u-full-width" type="text" placeholder="Guide Title..." id="titleInput">
+            </div>
+            <div class="createGuide">
+              <label for="selectPlayerRace">Player Race</label>
+              <select class="u-full-width" id="selectPlayerRace">
+                <option value="Option 1">Terran</option>
+                <option value="Option 2">Protoss</option>
+                <option value="Option 3">Zerg</option>
+              </select>
+            </div>
+
+            <div class="createGuide">
+              <label for="selectMatchup">Matchup</label>
+              <select class="u-full-width" id="selectMatchup">
+                <option value="Option 1">TvT</option>
+                <option value="Option 2">TvP</option>
+                <option value="Option 3">TvZ</option>
+                <option value="Option 4">PvT</option>
+                <option value="Option 5">PvP</option>
+                <option value="Option 6">PvZ</option>
+                <option value="Option 7">ZvT</option>
+                <option value="Option 8">ZvP</option>
+                <option value="Option 9">ZvZ</option>
+                <option value="Option 10">TvT / TvP</option>
+                <option value="Option 11">TvT / TvZ</option>
+                <option value="Option 12">TvP / TvZ</option>
+                <option value="Option 13">PvP / PvT</option>
+                <option value="Option 14">PvP / PvZ</option>
+                <option value="Option 15">PvT / PvZ</option>
+                <option value="Option 13">ZvZ / ZvT</option>
+                <option value="Option 14">ZvZ / ZvP</option>
+                <option value="Option 15">ZvT / ZvP</option>
+                <option value="Option 13">TvT / TvP / TvZ</option>
+                <option value="Option 14">PvP / PvT / PvZ</option>
+                <option value="Option 15">ZvZ / ZvT / ZvP</option>
+              </select>
+            </div>
+
+          </div>
+          <label for="guideDescription">Description</label>
+          <textarea class="u-full-width" placeholder="Your guide here..." id="descriptionInput"></textarea>
+          <input class="button-primary" type="submit" value="Create!">
+        </form>
+        </div>
+      <!-- end of create guide -->
+
+      <!-- show guides table -->
+      <div id = "show-all-guides">
+   <!--       <table id="showAllGuidesTable" class = "table table-hover">
+          <thead>
+            <th> Player Race </th>
+            <th> Guide </th>
+            <th> Matchup </th>
+            <th> Created On </th>
+          </thead>
+          <tbody id = "showAllGuides">
+            <tr>
+            </tr>
+          </tbody>
+          </table> -->
+
+        <!-- show all guides hbs template -->
+        <script id = "allGuidesHandlebars" type = "text/x-handlebars-template">
+          {{#each guides}}
+            <tr>
+              <td>{{playerRace}}</td>
+              <td>{{title}}</td>
+              <td>{{matchup}}</td>
+              <td>{{date}}</td>
+              <td><button class="show-guide-button" data-id={{_id}}> Show Guide </button> </td>
+            </tr>
+          {{/each}}
+        </script>
+        <!-- end of show all guides hbs template -->
+
+      </div>
+      <!-- end of show guides table -->
+
+      <!-- UPDATE guide -->
+  <!--     <div id="updateGuideContainer">
+        <form id="updateNewGuide">
+          <div class="row">
+            <div class="updateGuide">
+              <label for="updateGuideTitle">Guide Title</label>
+              <input class="u-full-width" type="text" placeholder="Guide Title..." id="titleInput">
+            </div>
+            <div class="updateGuide">
+              <label for="updateSelectPlayerRace">Player Race</label>
+              <select class="u-full-width" id="selectPlayerRace">
+                <option value="Option 1">Terran</option>
+                <option value="Option 2">Protoss</option>
+                <option value="Option 3">Zerg</option>
+              </select>
+            </div>
+            <div class="updateGuide">
+              <label for="updateSelectMatchup">Matchup</label>
+              <select class="u-full-width" id="selectMatchup">
+                <option value="Option 1">TvT</option>
+                <option value="Option 2">TvP</option>
+                <option value="Option 3">TvZ</option>
+                <option value="Option 4">PvT</option>
+                <option value="Option 5">PvP</option>
+                <option value="Option 6">PvZ</option>
+                <option value="Option 7">ZvT</option>
+                <option value="Option 8">ZvP</option>
+                <option value="Option 9">ZvZ</option>
+                <option value="Option 10">TvT / TvP</option>
+                <option value="Option 11">TvT / TvZ</option>
+                <option value="Option 12">TvP / TvZ</option>
+                <option value="Option 13">PvP / PvT</option>
+                <option value="Option 14">PvP / PvZ</option>
+                <option value="Option 15">PvT / PvZ</option>
+                <option value="Option 13">ZvZ / ZvT</option>
+                <option value="Option 14">ZvZ / ZvP</option>
+                <option value="Option 15">ZvT / ZvP</option>
+                <option value="Option 13">TvT / TvP / TvZ</option>
+                <option value="Option 14">PvP / PvT / PvZ</option>
+                <option value="Option 15">ZvZ / ZvT / ZvP</option>
+              </select>
+            </div>
+          </div>
+          <label for="updateGuideDescription">Description</label>
+          <textarea class="u-full-width" placeholder="Your updated guide here..." id="updateDescriptionInput"></textarea>
+          <input class="button-primary" type="submit" value="Update!">
+        </form>
+      </div> -->
+      <!-- end of update guide -->
+
+      <script id="show-one-guide" type = "text/x-handlebars-template">
+        <h2>{{title}}</h2>
+        <h3>{{playerRace}}</h3>
+        <p>{{{description}}}</p>
+        <h6>{{date}}</h6>
+        <button id="edit-guide" class="edit-button" data-id={{_id}}>Edit</button>
+        <button id="delete-guide" class="delete-button" data-id={{_id}}>Delete</button>
+      </script>
     </div>
-    <!-- end of create guide -->
-
-
-
-
   </body>
 </html>
