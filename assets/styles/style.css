@@ -84,7 +84,7 @@ a {
   top: 70px;
   left: 10px;
   color: white;
-  /*position: absolute;*/
+  position: absolute;
   bottom: 10;
   padding: 10px;
   background-color: rgba(49,169,200,0.3);

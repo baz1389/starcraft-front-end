@@ -22,7 +22,7 @@ var form2object = function(form) {
 var regCb = function (error, data) {
   if (error) {
     console.error(error);
-    $(".user-messages").html("<strong>Error! Registration fail!</strong>");
+    $(".user-messages").html("<strong>Error! Registration failed!</strong>");
     return;
   }
   console.log('data is ' + data);
@@ -34,7 +34,7 @@ var loginCb = function (error, data) {
 
   if (error) {
     console.error(error);
-    $(".user-messages").html("<strong>Error! Login fail!</strong>");
+    $(".user-messages").html("<strong>Error! Login failed!</strong>");
     return;
   } else {
     console.log(JSON.stringify(data, null, 4));
