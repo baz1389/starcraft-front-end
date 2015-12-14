@@ -1,84 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-
+  <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-
     <title>Starcraft</title>
-
     <!-- Bootstrap Core CSS -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-
     <!-- Custom CSS -->
     <style>
-    body {
-        padding-top: 70px;
-        /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
-    }
+      body {
+      padding-top: 70px;
+      }
     </style>
-
-</head>
-
-<body>
+  </head>
+  <body>
 
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <!-- <a class="navbar-brand" href="#">Start Bootstrap</a> -->
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="#">Register</a>
-                    </li>
-                    <li>
-                        <a href="#">Login</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          </button>
+          <!-- <a class="navbar-brand" href="#">Start Bootstrap</a> -->
         </div>
-        <!-- /.container -->
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="#">Register</a>
+            </li>
+            <li>
+              <a href="#">Login</a>
+            </li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container -->
     </nav>
+
 
     <!-- Page Content -->
     <div class="container">
 
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <h1>A Bootstrap Starter Template</h1>
-                <p class="lead">Complete with pre-defined file paths that you won't have to change!</p>
-                <ul class="list-unstyled">
-                    <li>Bootstrap v3.3.6</li>
-                    <li>jQuery v1.11.1</li>
-                </ul>
+      <div class="col-lg-12 text-center">
+        <h1>Starcraft 2 Guides</h1>
+        <p class="lead">Learn how to climb the ladder all the way to Bronze!</p>
+      </div>
+
+
+        <!-- create guide form -->
+        <form id="createNewGuide">
+
+          <div class="row">
+            <div class="createGuide">
+              <label for="guideTitle">Guide Title</label>
+              <input class="u-full-width" type="text" placeholder="Guide Title..." id="titleInput">
             </div>
+
+            <div class="createGuide">
+              <label for="selectPlayerRace">Player Race</label>
+              <select class="u-full-width" id="selectPlayerRace">
+                <option value="Option 1">Terran</option>
+                <option value="Option 2">Protoss</option>
+                <option value="Option 3">Zerg</option>
+              </select>
+            </div>
+
+            <div class="createGuide">
+              <label for="selectMatchup">Matchup</label>
+              <select class="u-full-width" id="selectMatchup">
+                <option value="Option 1">TvT</option>
+                <option value="Option 2">TvP</option>
+                <option value="Option 3">TvZ</option>
+                <option value="Option 4">PvT</option>
+                <option value="Option 5">PvP</option>
+                <option value="Option 6">PvZ</option>
+                <option value="Option 7">ZvT</option>
+                <option value="Option 8">ZvP</option>
+                <option value="Option 9">ZvZ</option>
+                <option value="Option 10">TvT / TvP</option>
+                <option value="Option 11">TvT / TvZ</option>
+                <option value="Option 12">TvP / TvZ</option>
+                <option value="Option 13">PvP / PvT</option>
+                <option value="Option 14">PvP / PvZ</option>
+                <option value="Option 15">PvT / PvZ</option>
+                 <option value="Option 13">ZvZ / ZvT</option>
+                <option value="Option 14">ZvZ / ZvP</option>
+                <option value="Option 15">ZvT / ZvP</option>
+                 <option value="Option 13">TvT / TvP / TvZ</option>
+                <option value="Option 14">PvP / PvT / PvZ</option>
+                <option value="Option 15">ZvZ / ZvT / ZvP</option>
+
+              </select>
+            </div>
+          </div>
+
+          <label for="guideDescription">Description</label>
+          <textarea class="u-full-width" placeholder="Your guide here..." id="descriptionInput"></textarea>
+          <input class="button-primary" type="submit" value="Submit">
+        </form>
+        <!-- create guide form end -->
+
+        <div id = "show-all-guides">
+          <table id="showAllGuidesTable" class = "table table-hover">
+            <thead>
+              <th> Player Race </th>
+              <th> Guide </th>
+              <th> Matchup </th>
+              <th> Created By </th>
+            </thead>
+            <tbody id = "showAllGuides">
+            </tbody>
+          </table>
+          <script id = "guideHandlebars" type = "text/x-handlebars-template">
+            {{#each guides}}
+              <tr>
+                <td>{{playerRace}}</td>
+                <td>{{title}}</td>
+                <td>{{author}}</td>
+                <td>{{date}}</td>
+                <td><button class="show-guide-button" data-id={{_id}}> Show Guide </button> </td>
+              </tr>
+            {{/each}}
+          </script>
         </div>
-        <!-- /.row -->
-
     </div>
-    <!-- /.container -->
-
-    <!-- jQuery Version 1.11.1 -->
+    <!-- end container -->
     <script src="assets/js/jquery.js"></script>
-
     <!-- Bootstrap Core JavaScript -->
     <script src="assets/js/bootstrap.min.js"></script>
-
-</body>
-
+  </body>
 </html>
