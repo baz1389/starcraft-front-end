@@ -44,15 +44,30 @@ var loginCb = function (error, data) {
 };
 
 
-// var createCb = function(error, data) {
-//   if (error) {
-//     console.error(error);
-//     // $(".user-messages").html("<strong>Error! Poll create fail!</strong>");
-//     return;
-//   }
+var createCb = function(error, data) {
+  if (error) {
+    console.error(error);
+    $(".user-messages").html("<strong>Error! Guide was not created!</strong>");
+    return;
+  }
 
 
 
-// };
+};
 
 
+$("#create-blog").on("submit", function(event){
+      event.preventDefault();
+      var credentials = formDataToObject(this);
+      blogRequest.create(credentials, function(error, data){
+      blogRequest.getAll(function(error, data){
+        $("#showAllBlogTableBody").empty();
+        $("#display-blogs-table").show();
+        $("#one-blog").hide();
+        var template = Handlebars.compile($("#showAllBlogHandlebar").html());
+        $('#result').val(JSON.stringify(data, null, 4)); //logs to test box
+        var newHTML = template({blogs: data.blogs});
+        $("#showAllBlogTableBody").html(newHTML);
+        });
+      });
+     });

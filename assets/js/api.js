@@ -55,30 +55,34 @@ var guide_api = {
       url: this.url + '/guides',
       contentType: 'application/json; charset=utf-8',
       data: JSON.stringify(data),
+      dataType: "json"
     }, callback);
   },
 
-  showGuide: function(id, callback) {
+  readAll: function(callback) {
     this.ajax({
       method: 'GET',
-      url: this.url + '/guides/' + id,
+      url: this.url + '/guides',
+      dataType: "json"
     }, callback);
   },
 
-  listGuides: function (callback) {
+  readOne: function (callback) {
     this.ajax({
       method: 'GET',
       url: this.url + '/guides/' + id,
+      dataType: "json"
       }, callback);
   },
 
 
-  editGuide: function (id, data, callback) {
+  updateGuide: function (id, data, callback) {
     this.ajax({
       method: 'PATCH',
       url: this.url + '/guides/' + id,
       contentType: 'application/json; charset=utf-8',
       data: JSON.stringify(data),
+      dataType: "json"
     }, callback);
   },
 

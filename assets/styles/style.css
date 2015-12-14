@@ -79,10 +79,10 @@ a {
 }
 
 .user-messages {
-  width: 300px;
+  width: 250px;
   height: 60px;
-  top: 70px;
-  left: 10px;
+  top: 110px;
+  left: 36%;
   color: white;
   position: absolute;
   bottom: 10;
