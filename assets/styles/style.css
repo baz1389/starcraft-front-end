@@ -44,6 +44,11 @@ button:active, input[type="submit"]:active {
   color: #fff;
 }
 
+a {
+    text-decoration: none;
+    color: #F2C307;
+}
+
 /* Register and Login */
 .API-register {
   width: 20%;
@@ -78,7 +83,8 @@ button:active, input[type="submit"]:active {
   height: 60px;
   top: 70px;
   left: 10px;
-  position: absolute;
+  color: white;
+  /*position: absolute;*/
   bottom: 10;
   padding: 10px;
   background-color: rgba(49,169,200,0.3);

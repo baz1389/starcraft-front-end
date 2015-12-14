@@ -5,12 +5,37 @@ $(document).ready(function() {
   // register event handler
   $('#register').on('submit', function(e) {
     e.preventDefault();
+    console.log("click");
     var credentials = form2object(this);
     guide_api.register(credentials, regCb);
     console.log("successful register!");
      // hide register container
     // $('.API-register').slideUp();
   });
+
+  // login event handler
+  $('#login').on('submit', function(e) {
+    e.preventDefault();
+    console.log("click");
+    var credentials = form2object(this);
+    console.log(credentials);
+    guide_api.login(credentials, loginCb);
+
+    // hide login container
+    $('.API-login').slideUp();
+
+    // fade up user-messages and create-poll button
+    // $('.user-messages').fadeIn();
+    $('.user-messages').html('<p>Welcome, ' + credentials.username + '</p>');
+
+    // add user feedback
+    $('.messages-container h4').html('Welcome, ' + credentials.username);
+  });
+
+
+
+
+
 
   // $('#createNewGuide').on('submit', function(e) {
   //   e.preventDefault();
