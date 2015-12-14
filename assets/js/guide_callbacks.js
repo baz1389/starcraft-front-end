@@ -27,7 +27,6 @@ var regCb = function (error, data) {
   }
   console.log('data is ' + data);
   console.log(JSON.stringify(data, null, 4));
-  console.log(JSON.stringify(credentials, null, 4));
 };
 
 // login callback
@@ -39,7 +38,7 @@ var loginCb = function (error, data) {
     return;
   } else {
     console.log(JSON.stringify(data, null, 4));
-    console.log(JSON.stringify(credentials, null, 4));
+    console.log("Logged in!");
   }
 
 };
@@ -54,6 +53,6 @@ var loginCb = function (error, data) {
 
 
 
-};
+// };
 
 

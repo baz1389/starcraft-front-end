@@ -5,12 +5,13 @@ $(document).ready(function() {
   // register event handler
   $('#register').on('submit', function(e) {
     e.preventDefault();
-    console.log("click");
     var credentials = form2object(this);
     guide_api.register(credentials, regCb);
     console.log("successful register!");
      // hide register container
-    // $('.API-register').slideUp();
+    $('.API-register').slideUp();
+
+    $('.user-messages').html('<p>Successfully registered as, ' + credentials.username + '</p>');
   });
 
   // login event handler
