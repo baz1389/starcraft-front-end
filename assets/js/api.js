@@ -3,7 +3,6 @@
 // api HTTP requests/responses
 
 var guide_api = {
-  pollWatcher: null,
   url: 'http://localhost:3000',
 
   ajax: function(config, cb) {
