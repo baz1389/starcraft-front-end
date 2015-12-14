@@ -73,10 +73,21 @@ button:active, input[type="submit"]:active {
   text-align: center;
 }
 
+.user-messages {
+  width: 300px;
+  height: 60px;
+  top: 70px;
+  left: 10px;
+  position: absolute;
+  bottom: 10;
+  padding: 10px;
+  background-color: rgba(49,169,200,0.3);
+}
+
 #createGuideContainer, #updateGuideContainer {
   width: 40%;
-  top: 200px;
-  position: fixed;
+  top: 160px;
+  position: absolute;
   bottom: 50px;
   left: 33%;
   right: 33%;
