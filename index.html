@@ -1,152 +1,118 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
     <title>Starcraft</title>
-    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/styles/style.css">
+     <script src="assets/js/jquery.js" type="text/javascript" defer charset="utf-8"></script>
+      <script src="assets/js/handlebars.js" type="text/javascript" defer charset="utf-8"></script>
 
-    <script src="assets/js/jquery.js"></script>
-    <script src="assets/js/handlebars.js"></script>
-    <!-- Bootstrap Core JavaScript -->
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/api.js"></script>
-    <script src="assets/js/guides.js"></script>
-    <script src="assets/js/guide_callbacks.js"></script>
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
-    <!-- Custom CSS -->
-    <style>
-      body {
-      padding-top: 70px;
-      }
-    </style>
   </head>
   <body>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          </button>
-          <!-- <a class="navbar-brand" href="#">Start Bootstrap</a> -->
-        </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li>
-              <a href="#">Register</a>
-            </li>
-            <li>
-              <a href="#">Login</a>
-            </li>
-          </ul>
-        </div>
-        <!-- /.navbar-collapse -->
+    <div class="wrapper">
+
+    <section class="span_4_of_12 pad-lft">
+      <!-- begin hero -->
+      <!-- hero animated zoomIn duck-intro -->
+      <div class="landingPage">
+        <h2>Starcraft Guide</h2>
+        <h5>Climbing the ladder to Bronze.</h5>
+        <p>Already a member? <a href="#login" class="login-a">Login</a>.</p>
+        <p>First time here? <a href="#register" class="register-a">Register</a>.</p>
       </div>
-      <!-- /.container -->
-    </nav>
+      <!-- end hero -->
+    </section>
 
+    <!-- begin user messages box -->
+    <div class=" span_4_of_12 right-fix user-messages hidden"></div>
+    <!-- end user messages box -->
 
-    <!-- Page Content -->
-    <div class="pageContent">
-
-      <div class="col-lg-12 text-center">
-        <h1>Starcraft 2 Guides</h1>
-        <p class="lead">Learn how to climb the ladder all the way to Bronze!</p>
-      </div>
-
-
-        <!-- create guide form -->
-        <form id="createNewGuide">
-
-          <div class="row">
-            <div class="createGuide">
-              <label for="guideTitle">Guide Title</label>
-              <input class="u-full-width" type="text" placeholder="Guide Title..." id="titleInput">
-            </div>
-
-            <div class="createGuide">
-              <label for="selectPlayerRace">Player Race</label>
-              <select class="u-full-width" id="selectPlayerRace">
-                <option value="Option 1">Terran</option>
-                <option value="Option 2">Protoss</option>
-                <option value="Option 3">Zerg</option>
-              </select>
-            </div>
-
-            <div class="createGuide">
-              <label for="selectMatchup">Matchup</label>
-              <select class="u-full-width" id="selectMatchup">
-                <option value="Option 1">TvT</option>
-                <option value="Option 2">TvP</option>
-                <option value="Option 3">TvZ</option>
-                <option value="Option 4">PvT</option>
-                <option value="Option 5">PvP</option>
-                <option value="Option 6">PvZ</option>
-                <option value="Option 7">ZvT</option>
-                <option value="Option 8">ZvP</option>
-                <option value="Option 9">ZvZ</option>
-                <option value="Option 10">TvT / TvP</option>
-                <option value="Option 11">TvT / TvZ</option>
-                <option value="Option 12">TvP / TvZ</option>
-                <option value="Option 13">PvP / PvT</option>
-                <option value="Option 14">PvP / PvZ</option>
-                <option value="Option 15">PvT / PvZ</option>
-                 <option value="Option 13">ZvZ / ZvT</option>
-                <option value="Option 14">ZvZ / ZvP</option>
-                <option value="Option 15">ZvT / ZvP</option>
-                 <option value="Option 13">TvT / TvP / TvZ</option>
-                <option value="Option 14">PvP / PvT / PvZ</option>
-                <option value="Option 15">ZvZ / ZvT / ZvP</option>
-
-              </select>
-            </div>
-          </div>
-
-          <label for="guideDescription">Description</label>
-          <textarea class="u-full-width" placeholder="Your guide here..." id="descriptionInput"></textarea>
-          <input class="button-primary" type="submit" value="Submit">
+    <!-- begin register -->
+    <div class="API-register hidden">
+      <div class="register-login">
+        <h4>Register</h4>
+        <form id="register" enctype="multipart/form-data" charset="utf-8">
+          <label for="username">Username</label>
+          <input type="text" name="username" placeholder="username">
+          <label for="password">Password</label>
+          <input type="password" name="password" placeholder="password">
+          <input type="submit" name="register" value="Register">
         </form>
-        <!-- create guide form end -->
-
-        <div id = "show-all-guides">
-          <table id="showAllGuidesTable" class = "table table-hover">
-            <thead>
-              <th> Player Race </th>
-              <th> Guide </th>
-              <th> Matchup </th>
-              <th> Created On </th>
-            </thead>
-            <tbody id = "showAllGuides">
-            <tr>
-
-            </tr>
-            </tbody>
-          </table>
-          <script id = "guideHandlebars" type = "text/x-handlebars-template">
-            {{#each guides}}
-              <tr>
-                <td>{{playerRace}}</td>
-                <td>{{title}}</td>
-                // <td>{{author}}</td>
-                <td>{{date}}</td>
-                <td><button class="show-guide-button" data-id={{_id}}> Show Guide </button> </td>
-              </tr>
-            {{/each}}
-          </script>
-        </div>
+        <p>Already a member? <a href="#" class="login-a2"> Login.</a></p>
+      </div>
     </div>
-    <!-- end pageContent -->
+    <!-- end register -->
+
+    <!-- begin login -->
+    <div class="API-login hidden">
+      <div class="register-login">
+        <h4>Login</h4>
+        <form id="login" enctype="multipart/form-data" charset="utf-8">
+          <label for="username">Username</label>
+          <input name="username" type="text" placeholder="username">
+          <label for="password">Password</label>
+          <input name="password" type="password" placeholder="password">
+          <input name="login" type="submit" value="Login">
+        </form>
+        <p>First time here? <a href="#" class="register-a2"> Register.</a></p>
+      </div>
+    </div>
+    <!-- end login -->
+
+    <!-- create guide -->
+    <div id="createGuideContainer">
+      <form id="createNewGuide">
+        <div class="row">
+          <div class="createGuide">
+            <label for="guideTitle">Guide Title</label>
+            <input class="u-full-width" type="text" placeholder="Guide Title..." id="titleInput">
+          </div>
+          <div class="createGuide">
+            <label for="selectPlayerRace">Player Race</label>
+            <select class="u-full-width" id="selectPlayerRace">
+              <option value="Option 1">Terran</option>
+              <option value="Option 2">Protoss</option>
+              <option value="Option 3">Zerg</option>
+            </select>
+          </div>
+          <div class="createGuide">
+            <label for="selectMatchup">Matchup</label>
+            <select class="u-full-width" id="selectMatchup">
+              <option value="Option 1">TvT</option>
+              <option value="Option 2">TvP</option>
+              <option value="Option 3">TvZ</option>
+              <option value="Option 4">PvT</option>
+              <option value="Option 5">PvP</option>
+              <option value="Option 6">PvZ</option>
+              <option value="Option 7">ZvT</option>
+              <option value="Option 8">ZvP</option>
+              <option value="Option 9">ZvZ</option>
+              <option value="Option 10">TvT / TvP</option>
+              <option value="Option 11">TvT / TvZ</option>
+              <option value="Option 12">TvP / TvZ</option>
+              <option value="Option 13">PvP / PvT</option>
+              <option value="Option 14">PvP / PvZ</option>
+              <option value="Option 15">PvT / PvZ</option>
+              <option value="Option 13">ZvZ / ZvT</option>
+              <option value="Option 14">ZvZ / ZvP</option>
+              <option value="Option 15">ZvT / ZvP</option>
+              <option value="Option 13">TvT / TvP / TvZ</option>
+              <option value="Option 14">PvP / PvT / PvZ</option>
+              <option value="Option 15">ZvZ / ZvT / ZvP</option>
+            </select>
+          </div>
+        </div>
+        <label for="guideDescription">Description</label>
+        <textarea class="u-full-width" placeholder="Your guide here..." id="descriptionInput"></textarea>
+        <input class="button-primary" type="submit" value="Create!">
+      </form>
+    </div>
+    <!-- end of create guide -->
+
+
+
 
   </body>
 </html>
