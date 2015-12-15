@@ -30,12 +30,12 @@ button, input[type="submit"] {
   border: 0;
   padding: 10px;
   margin: 5px 0;
-  background-color: #2250cc;
+  background-color: #005580;
   color: #fff;
 }
 
 button:hover, input[type="submit"]:hover {
-  background-color: #2250cc;
+  background-color: #24748c;
   color: #fff;
 }
 
@@ -46,7 +46,7 @@ button:active, input[type="submit"]:active {
 
 a {
     text-decoration: none;
-    color: #F2C307;
+    color: #2d6987;
 }
 
 /* Register and Login */
@@ -120,7 +120,7 @@ a {
   width: 50%;
   margin-top: 4%;
   float: left;
-  background: #e69900;
+  background: #005580;
 }
 
 #updateGuide {

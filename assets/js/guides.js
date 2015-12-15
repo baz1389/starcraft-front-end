@@ -69,7 +69,12 @@ $(document).ready(function() {
 
   });
 
+  $('.show-guide-button').on('click', function(e) {
 
+
+
+
+  });
 
 
 
