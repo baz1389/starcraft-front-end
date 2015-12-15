@@ -25,6 +25,15 @@ input {
   text-indent: 10px;
 }
 
+#visuals {
+  width: 10%;
+  top: 110px;
+  left: 39%;
+  color: white;
+  bottom: 10;
+  padding: 10px;
+}
+
 .show-guide-button {
   background-color: rgba(49,169,200,0.3);
 }

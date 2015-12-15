@@ -38,10 +38,10 @@ var loginCb = function (error, data) {
     $(".user-messages").html("<strong>Error! Login failed!</strong>");
     return;
   } else {
-    console.log(JSON.stringify(data, null, 4));
+    // console.log(JSON.stringify(data, null, 4));
     console.log("Logged in!");
   }
-
+  guide_api.readAll(readAllCb);
 };
 
 var createCb = function(error, data) {
@@ -62,7 +62,7 @@ var readAllCb = function(error, data) {
   }
   $("#showAllGuides").empty();
   var template = Handlebars.compile($('#allGuidesHandlebars').html());
-  console.log("result is " + JSON.stringify(data, null, 4));
+  // console.log("result is " + JSON.stringify(data, null, 4));
   var newHTML = template({guides: data});
   $('#showAllGuides').show;
   $('#showAllGuides').html(newHTML);

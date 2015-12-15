@@ -11,6 +11,8 @@ $(document).ready(function() {
   $('#updateGuideContainer').hide();
   $('#createGuideContainer').hide();
   $('#show-all-guides').hide();
+  $('.showTable').hide();
+  $('.showCreate').hide();
 
 
   // REGISTER
@@ -30,7 +32,7 @@ $(document).ready(function() {
     e.preventDefault();
     console.log("click");
     var credentials = form2object(this);
-    console.log(credentials);
+    // console.log(credentials);
     guide_api.login(credentials, loginCb);
 
     // hide login container
@@ -42,8 +44,23 @@ $(document).ready(function() {
     // $('.user-messages').fadeIn();
     $('.user-messages').html('<p>Welcome, ' + credentials.username + '</p>');
     $('#show-all-guides').show();
-    $('#createGuideContainer').show();
+    $('.showTable').show();
+    $('.showCreate').show();
 
+  });
+
+  // shows table with all guides
+  $('.showTable').on('click', function(e) {
+    $('#show-all-guides').show();
+    $('#single-guide').hide();
+    $('#createGuideContainer').hide();
+  });
+
+  // shows create guide form
+  $('.showCreate').on('click', function(e) {
+    $('#createGuideContainer').show();
+    $('#single-guide').hide();
+    $('#show-all-guides').hide();
   });
 
   // CREATE A GUIDE
@@ -70,8 +87,9 @@ $(document).ready(function() {
   });
 
 
-  $("#showAllGuides").on("click", function(e){
+  $(".show-guide-button").on("click", function(e){
     e.preventDefault();
+    console.log("clicked show guide");
     var id = $(event.target).data("id");
     if(id === undefined){
       return;
