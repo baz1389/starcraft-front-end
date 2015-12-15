@@ -35,6 +35,8 @@ $(document).ready(function() {
     // fade up user-messages and create-poll button
     // $('.user-messages').fadeIn();
     $('.user-messages').html('<p>Welcome, ' + credentials.username + '</p>');
+    $('#show-all-guides').show();
+    $('#createGuideContainer').show();
 
   });
 

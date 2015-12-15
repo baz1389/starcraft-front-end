@@ -78,11 +78,16 @@ a {
   text-align: center;
 }
 
+.user-messages > p {
+  text-align: center;
+  margin-top: 1px;
+}
+
 .user-messages {
   width: 250px;
-  height: 60px;
+  height: 15px;
   top: 110px;
-  left: 36%;
+  left: 39%;
   color: white;
   position: absolute;
   bottom: 10;
@@ -95,17 +100,18 @@ a {
   top: 160px;
   position: absolute;
   bottom: 50px;
-  left: 33%;
-  right: 33%;
+  margin-left: 56%;
 }
 
 #descriptionInput {
   width: 400px;
   height: 300px;
+  margin-right: 1%;
 }
 
 #showAllGuidesTable {
-  width: 70%;
+  width: 50%;
+  margin-top: 4%;
   float: left;
   background: #e69900;
 }
