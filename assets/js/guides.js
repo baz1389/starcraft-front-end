@@ -69,14 +69,16 @@ $(document).ready(function() {
 
   });
 
-  $('.show-guide-button').on('click', function(e) {
 
+  $("#showAllGuides").on("click", function(e){
+    e.preventDefault();
+    var id = $(event.target).data("id");
+    if(id === undefined){
+      return;
+    }
 
-
-
+    guide_api.readOne(id, readOneCb);
   });
-
-
 
 
 

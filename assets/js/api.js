@@ -61,7 +61,7 @@ var guide_api = {
     }, callback);
   },
 
-  readOne: function (callback) {
+  readOne: function (id, callback) {
     this.ajax({
       method: 'GET',
       url: this.url + '/guides/' + id,

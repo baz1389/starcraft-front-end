@@ -69,42 +69,19 @@ var readAllCb = function(error, data) {
 
 };
 
+var readOneCb = function(error, data) {
+  if (error) {
+    console.error(error);
+    $(".user-messages").html("<strong>Error! Guide could not be loaded!</strong>");
+    return;
+  }
 
-  // <div id = "show-all-blog">
-  //   <table id="showAllBlogTable" class = "table table-hover">
-  //     <thead>
-  //       <th> Blog Title </th>
-  //       <th> Blog Author </th>
-  //       <th> Date </th>
-  //     </thead>
-  //     <tbody id = "showAllBlogTableBody">
-  //     </tbody>
-  //   </table>
+  $("#single-guide").empty();
+  $("#showAllGuidesTable").hide();
+  $("#single-guide").show();
+  var template = Handlebars.compile($("#show-one-guide").html());
+  console.log(JSON.stringify(data, null, 4));
+  var newHTML = template(data.blogs);
+  $("#single-guide").html(newHTML);
 
-  //   <script id = "showAllBlogHandlebar" type = "text/x-handlebars-template">
-  //     {{#each blogs}}
-  //       <tr>
-  //         <td>{{title}}</td>
-  //         <td>{{author}}</td>
-  //         <td>{{date}}</td>
-  //         <td><button class="show-blog-button" data-id={{_id}}> Show Blog </button> </td>
-  //       </tr>
-  //     {{/each}}
-  //   </script>
-
-
-  // $("#create-blog").on("submit", function(event){
-  //   event.preventDefault();
-  //   var credentials = formDataToObject(this);
-  //   blogRequest.create(credentials, function(error, data){
-  //   blogRequest.getAll(function(error, data){
-  //     $("#showAllBlogTableBody").empty();
-  //     $("#display-blogs-table").show();
-  //     $("#one-blog").hide();
-  //     var template = Handlebars.compile($("#showAllBlogHandlebar").html());
-  //     $('#result').val(JSON.stringify(data, null, 4)); //logs to test box
-  //     var newHTML = template({blogs: data.blogs});
-  //     $("#showAllBlogTableBody").html(newHTML);
-  //     });
-  //   });
-  // });
+};

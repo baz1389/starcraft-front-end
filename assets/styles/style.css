@@ -25,6 +25,10 @@ input {
   text-indent: 10px;
 }
 
+.show-guide-button {
+  background-color: rgba(49,169,200,0.3);
+}
+
 button, input[type="submit"] {
   width: 100%;
   border: 0;
