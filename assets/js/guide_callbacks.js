@@ -1,6 +1,7 @@
 'use strict'
 
  var guide = {
+  id: null,
   playerRace: null,
   title: null,
   matchup: null,
@@ -44,30 +45,35 @@ var loginCb = function (error, data) {
 };
 
 
+// var createCb = function(error, data) {
+//   if (error) {
+//     console.error(error);
+//     $(".user-messages").html("<strong>Error! Guide was not created!</strong>");
+//     return;
+//   }
+//   guide_api.readAll(function(error, data){
+//     $("#showAllGuides").empty();
+//     $("#createGuideContainer").show();
+//     $("#single-guide").hide();
+//     var template = Handlebars.compile($("#allGuidesHandlebars").html());
+//     console.log('the form will send ' + JSON.stringify(data, null, 4));
+//     var newHTML = template({guides: data.guides});
+//     $("#showAllGuides").html(newHTML);
+//   });
+// };
+
 var createCb = function(error, data) {
   if (error) {
     console.error(error);
-    $(".user-messages").html("<strong>Error! Guide was not created!</strong>");
+    $(".user-messages").html("<strong>Error! Poll create fail!</strong>");
     return;
   }
+  console.log('successful create, data is ' + JSON.stringify(data, null, 4));
 
-
+  guide.id = data["_id"];
+  guide.playerRace = data.playerRace;
+  guide.title = data.title;
+  guide.matchup = data.matchup;
+  guide.author = data.author;
 
 };
-
-
-$("#create-blog").on("submit", function(event){
-      event.preventDefault();
-      var credentials = formDataToObject(this);
-      blogRequest.create(credentials, function(error, data){
-      blogRequest.getAll(function(error, data){
-        $("#showAllBlogTableBody").empty();
-        $("#display-blogs-table").show();
-        $("#one-blog").hide();
-        var template = Handlebars.compile($("#showAllBlogHandlebar").html());
-        $('#result').val(JSON.stringify(data, null, 4)); //logs to test box
-        var newHTML = template({blogs: data.blogs});
-        $("#showAllBlogTableBody").html(newHTML);
-        });
-      });
-     });

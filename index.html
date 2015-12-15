@@ -63,55 +63,53 @@
       <!-- end login -->
 
       <!-- create guide -->
-        <div id="createGuideContainer">
-          <form id="createNewGuide">
-            <div class="row">
-              <div class="createGuide">
-                <label for="guideTitle">Guide Title</label>
-                <input class="u-full-width" type="text" placeholder="Guide Title..." id="titleInput">
-              </div>
-              <div class="createGuide">
-                <label for="selectPlayerRace">Player Race</label>
-                <select class="u-full-width" id="selectPlayerRace">
-                  <option value="Option 1">Terran</option>
-                  <option value="Option 2">Protoss</option>
-                  <option value="Option 3">Zerg</option>
-                </select>
-              </div>
-
-              <div class="createGuide">
-                <label for="selectMatchup">Matchup</label>
-                <select class="u-full-width" id="selectMatchup">
-                  <option value="Option 1">TvT</option>
-                  <option value="Option 2">TvP</option>
-                  <option value="Option 3">TvZ</option>
-                  <option value="Option 4">PvT</option>
-                  <option value="Option 5">PvP</option>
-                  <option value="Option 6">PvZ</option>
-                  <option value="Option 7">ZvT</option>
-                  <option value="Option 8">ZvP</option>
-                  <option value="Option 9">ZvZ</option>
-                  <option value="Option 10">TvT / TvP</option>
-                  <option value="Option 11">TvT / TvZ</option>
-                  <option value="Option 12">TvP / TvZ</option>
-                  <option value="Option 13">PvP / PvT</option>
-                  <option value="Option 14">PvP / PvZ</option>
-                  <option value="Option 15">PvT / PvZ</option>
-                  <option value="Option 13">ZvZ / ZvT</option>
-                  <option value="Option 14">ZvZ / ZvP</option>
-                  <option value="Option 15">ZvT / ZvP</option>
-                  <option value="Option 13">TvT / TvP / TvZ</option>
-                  <option value="Option 14">PvP / PvT / PvZ</option>
-                  <option value="Option 15">ZvZ / ZvT / ZvP</option>
-                </select>
-              </div>
-
+      <div id="createGuideContainer">
+        <form id="createNewGuide">
+          <div class="row">
+            <div class="six columns">
+              <label for="guideTitle">Guide Title</label>
+              <input class="u-full-width" type="text" placeholder="Guide..." id="guideTitle">
             </div>
-            <label for="guideDescription">Description</label>
-            <textarea class="u-full-width" placeholder="Your guide here..." id="descriptionInput"></textarea>
-            <input class="button-primary" type="submit" value="Create!">
-          </form>
-        </div>
+            <div class="six columns">
+              <label for="playerRace">Player Race</label>
+              <select class="u-full-width" id="playerRace">
+                <option value="Terran">Terran</option>
+                <option value="Protoss">Protoss</option>
+                <option value="Zerg">Zerg</option>
+              </select>
+            </div>
+            <div class="six columns">
+              <label for="matchup">Matchup</label>
+              <select class="u-full-width" id="matchup">
+                <option value="TvT">TvT</option>
+                <option value="TvP">TvP</option>
+                <option value="TvZ">TvZ</option>
+                <option value="PvT">PvT</option>
+                <option value="PvP">PvP</option>
+                <option value="PvZ">PvZ</option>
+                <option value="ZvT">ZvT</option>
+                <option value="ZvP">ZvP</option>
+                <option value="ZvZ">ZvZ</option>
+                <option value="TvT / TvP">TvT / TvP</option>
+                <option value="TvT / TvZ">TvT / TvZ</option>
+                <option value="TvP / TvZ">TvP / TvZ</option>
+                <option value="PvP / PvT">PvP / PvT</option>
+                <option value="PvP / PvZ">PvP / PvZ</option>
+                <option value="PvT / PvZ">PvT / PvZ</option>
+                <option value="ZvZ / ZvT">ZvZ / ZvT</option>
+                <option value="ZvZ / ZvP">ZvZ / ZvP</option>
+                <option value="ZvT / ZvP">ZvT / ZvP</option>
+                <option value="TvT / TvP / TvZ">TvT / TvP / TvZ</option>
+                <option value="PvP / PvT / PvZ">PvP / PvT / PvZ</option>
+                <option value="ZvZ / ZvT / ZvP">ZvZ / ZvT / ZvP</option>
+              </select>
+            </div>
+          </div>
+          <label for="descriptionInput">Description</label>
+          <textarea class="u-full-width" placeholder="Description..." id="descriptionInput"></textarea>
+          <input class="button-primary" type="submit" value="Submit">
+        </form>
+      </div>
       <!-- end of create guide -->
 
       <!-- show guides table -->
@@ -152,27 +150,27 @@
             <div class="updateGuide">
               <label for="updateSelectMatchup">Matchup</label>
               <select class="u-full-width" id="selectMatchup">
-                <option value="Option 1">TvT</option>
-                <option value="Option 2">TvP</option>
-                <option value="Option 3">TvZ</option>
-                <option value="Option 4">PvT</option>
-                <option value="Option 5">PvP</option>
-                <option value="Option 6">PvZ</option>
-                <option value="Option 7">ZvT</option>
-                <option value="Option 8">ZvP</option>
-                <option value="Option 9">ZvZ</option>
-                <option value="Option 10">TvT / TvP</option>
-                <option value="Option 11">TvT / TvZ</option>
-                <option value="Option 12">TvP / TvZ</option>
-                <option value="Option 13">PvP / PvT</option>
-                <option value="Option 14">PvP / PvZ</option>
-                <option value="Option 15">PvT / PvZ</option>
-                <option value="Option 13">ZvZ / ZvT</option>
-                <option value="Option 14">ZvZ / ZvP</option>
-                <option value="Option 15">ZvT / ZvP</option>
-                <option value="Option 13">TvT / TvP / TvZ</option>
-                <option value="Option 14">PvP / PvT / PvZ</option>
-                <option value="Option 15">ZvZ / ZvT / ZvP</option>
+                <option value="TvT">TvT</option>
+                  <option value="TvP">TvP</option>
+                  <option value="TvZ">TvZ</option>
+                  <option value="PvT">PvT</option>
+                  <option value="PvP">PvP</option>
+                  <option value="PvZ">PvZ</option>
+                  <option value="ZvT">ZvT</option>
+                  <option value="ZvP">ZvP</option>
+                  <option value="ZvZ">ZvZ</option>
+                  <option value="TvT / TvP">TvT / TvP</option>
+                  <option value="TvT / TvZ">TvT / TvZ</option>
+                  <option value="TvP / TvZ">TvP / TvZ</option>
+                  <option value="PvP / PvT">PvP / PvT</option>
+                  <option value="PvP / PvZ">PvP / PvZ</option>
+                  <option value="PvT / PvZ">PvT / PvZ</option>
+                  <option value="ZvZ / ZvT">ZvZ / ZvT</option>
+                  <option value="ZvZ / ZvP">ZvZ / ZvP</option>
+                  <option value="ZvT / ZvP">ZvT / ZvP</option>
+                  <option value="TvT / TvP / TvZ">TvT / TvP / TvZ</option>
+                  <option value="PvP / PvT / PvZ">PvP / PvT / PvZ</option>
+                  <option value="ZvZ / ZvT / ZvP">ZvZ / ZvT / ZvP</option>
               </select>
             </div>
           </div>

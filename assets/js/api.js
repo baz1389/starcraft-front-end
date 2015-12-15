@@ -55,7 +55,6 @@ var guide_api = {
       url: this.url + '/guides',
       contentType: 'application/json; charset=utf-8',
       data: JSON.stringify(data),
-      dataType: "json"
     }, callback);
   },
 
