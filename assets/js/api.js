@@ -6,11 +6,6 @@ var guide_api = {
   url: 'http://localhost:3000',
 
   ajax: function(config, cb) {
-    $.ajaxSetup({
-      xhrFields: {
-        withCredentials: true
-      }
-    });
     $.ajax(config).done(function(data, textStatus, jqxhr) {
       cb(null, data);
     }).fail(function(jqxhr, status, error) {
@@ -54,7 +49,7 @@ var guide_api = {
       method: 'POST',
       url: this.url + '/guides',
       contentType: 'application/json; charset=utf-8',
-      data: JSON.stringify(data),
+      data: JSON.stringify(data)
     }, callback);
   },
 

@@ -2,6 +2,12 @@
 
 $(document).ready(function() {
 
+  $.ajaxSetup({
+    xhrFields: {
+      withCredentials: true
+    }
+  });
+
   $('#updateGuideContainer').hide();
   $('#createGuideContainer').hide();
   $('#show-all-guides').hide();
@@ -44,7 +50,19 @@ $(document).ready(function() {
   $('#createNewGuide').on('submit', function(e) {
     e.preventDefault();
 
-    var data = form2object(this);
+    var target = e.target;
+    var title = target.guideTitle.value;
+    var playerRace = target.playerRace.value;
+    var matchup = target.matchup.value;
+    var description = target.descriptionInput.value;
+
+    var data = {
+      title: title,
+      playerRace: playerRace,
+      matchup: matchup,
+      description: description
+    }
+
     console.log('the form will send ' + JSON.stringify(data, null, 4));
 
     guide_api.createGuide(data, createCb);
