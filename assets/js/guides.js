@@ -87,13 +87,15 @@ $(document).ready(function() {
   });
 
 
-  $(".show-guide-button").on("click", function(e){
+  $("#show-all-guides").on("click", function(e){
     e.preventDefault();
     console.log("clicked show guide");
-    var id = $(event.target).data("id");
+    var id = $(e.target).data("id");
     if(id === undefined){
       return;
     }
+    debugger;
+    console.log("guide id is " + id);
 
     guide_api.readOne(id, readOneCb);
   });

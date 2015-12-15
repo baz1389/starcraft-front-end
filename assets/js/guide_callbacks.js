@@ -81,7 +81,9 @@ var readOneCb = function(error, data) {
   $("#single-guide").show();
   var template = Handlebars.compile($("#show-one-guide").html());
   console.log(JSON.stringify(data, null, 4));
-  var newHTML = template(data.blogs);
+  debugger;
+  var newHTML = template(data[0]);
+  $("#single-guide").show();
   $("#single-guide").html(newHTML);
 
 };

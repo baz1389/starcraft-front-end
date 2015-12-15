@@ -192,17 +192,15 @@
       <!-- end of update guide -->
 
       <div id="single-guide" class="singleGuideContainer">
-
-        <script id="show-one-guide" type = "text/x-handlebars-template">
-          <h3>{{playerRace}}</h3>
-          <h2>{{title}}</h2>
-          <p>{{{description}}}</p>
-          <h6>{{date}}</h6>
-          <button id="edit-guide" class="edit-button" data-id={{_id}}>Edit</button>
-          <button id="delete-guide" class="delete-button" data-id={{_id}}>Delete</button>
-        </script>
-
       </div>
+
+      <script id="show-one-guide" type = "text/x-handlebars-template">
+        <h2>{{title}}</h2>
+        <h3>{{playerRace}} ":" {{matchup}}</h3>
+        <p>{{{description}}}</p>
+        <button id="edit-guide" class="edit-button" data-id={{_id}}>Edit</button>
+        <button id="delete-guide" class="delete-button" data-id={{_id}}>Delete</button>
+      </script>
 
     </div>
 
