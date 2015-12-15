@@ -66,6 +66,7 @@ $(document).ready(function() {
     console.log('the form will send ' + JSON.stringify(data, null, 4));
 
     guide_api.createGuide(data, createCb);
+
   });
 
 

@@ -99,14 +99,14 @@
           </select>
           <label for="descriptionInput">Description</label>
           <textarea class="u-full-width" placeholder="Description..." id="descriptionInput" name="desc"></textarea>
-          <input class="button-primary" type="submit" value="Submit">
+          <input class="button-primary" type="submit" value="Create!">
         </form>
       </div>
       <!-- end of create guide -->
 
       <!-- show guides table -->
       <div id = "show-all-guides">
-         <table id="showAllGuidesTable" class = "table table-hover">
+        <table id="showAllGuidesTable" class = "table table-hover">
           <thead>
             <th> Player Race </th>
             <th> Guide </th>
@@ -117,8 +117,21 @@
             <tr>
             </tr>
           </tbody>
-          </table>
+        </table>
 
+          <!-- show all guides hbs template -->
+        <script id = "allGuidesHandlebars" type = "text/x-handlebars-template">
+          {{#each guides}}
+            <tr>
+              <td>{{playerRace}}</td>
+              <td>{{title}}</td>
+              <td>{{matchup}}</td>
+              <td>{{date}}</td>
+              <td><button class="show-guide-button" data-id={{_id}}> Show Guide </button> </td>
+            </tr>
+          {{/each}}
+        </script>
+        <!-- end of show all guides hbs template -->
 
       </div>
       <!-- end of show guides table -->
@@ -174,32 +187,19 @@
       <!-- end of update guide -->
 
       <div id="single-guide" class="singleGuideContainer">
+
+        <script id="show-one-guide" type = "text/x-handlebars-template">
+          <h3>{{playerRace}}</h3>
+          <h2>{{title}}</h2>
+          <p>{{{description}}}</p>
+          <h6>{{date}}</h6>
+          <button id="edit-guide" class="edit-button" data-id={{_id}}>Edit</button>
+          <button id="delete-guide" class="delete-button" data-id={{_id}}>Delete</button>
+        </script>
+
       </div>
 
     </div>
-
-    <script id="show-one-guide" type = "text/x-handlebars-template">
-      <h3>{{playerRace}}</h3>
-      <h2>{{title}}</h2>
-      <p>{{{description}}}</p>
-      <h6>{{date}}</h6>
-      <button id="edit-guide" class="edit-button" data-id={{_id}}>Edit</button>
-      <button id="delete-guide" class="delete-button" data-id={{_id}}>Delete</button>
-    </script>
-
-      <!-- show all guides hbs template -->
-    <script id = "allGuidesHandlebars" type = "text/x-handlebars-template">
-      {{#each guides}}
-        <tr>
-          <td>{{playerRace}}</td>
-          <td>{{title}}</td>
-          <td>{{matchup}}</td>
-          <td>{{date}}</td>
-          <td><button class="show-guide-button" data-id={{_id}}> Show Guide </button> </td>
-        </tr>
-      {{/each}}
-    </script>
-    <!-- end of show all guides hbs template -->
 
   </body>
 </html>
