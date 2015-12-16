@@ -13,6 +13,7 @@ $(document).ready(function() {
   $('#show-all-guides').hide();
   $('.showTable').hide();
   $('.showCreate').hide();
+  $('#single-guide').hide();
 
 
   // REGISTER
@@ -52,6 +53,7 @@ $(document).ready(function() {
   // shows table with all guides
   $('.showTable').on('click', function(e) {
     $('#show-all-guides').show();
+    $('#showAllGuidesTable').show();
     $('#single-guide').hide();
     $('#createGuideContainer').hide();
   });

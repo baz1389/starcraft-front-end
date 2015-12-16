@@ -19,7 +19,7 @@
 
         <!-- begin landingPage -->
         <div class="landingPage">
-          <h1>Starcraft Guide</h1>
+          <h1>Starcraft 2 Guides</h1>
           <h2>Climbing the ladder to Bronze.</h2>
         </div>
         <!-- end landingPage -->
@@ -131,7 +131,7 @@
               <td>{{playerRace}}</td>
               <td>{{title}}</td>
               <td>{{matchup}}</td>
-              <td>{{date}}</td>
+              <td>{{date}} by {{author}}</td>
               <td><button class="show-guide-button" data-id={{_id}}> Show Guide </button> </td>
             </tr>
           {{/each}}
@@ -196,7 +196,8 @@
 
       <script id="show-one-guide" type = "text/x-handlebars-template">
         <h2>{{title}}</h2>
-        <h3>{{playerRace}} ":" {{matchup}}</h3>
+        <h3>{{playerRace}} : {{matchup}}</h3>
+        <h3>Description</h3>
         <p>{{{description}}}</p>
         <button id="edit-guide" class="edit-button" data-id={{_id}}>Edit</button>
         <button id="delete-guide" class="delete-button" data-id={{_id}}>Delete</button>
