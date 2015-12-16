@@ -10,8 +10,6 @@ $(document).ready(function() {
 
 });
 
-
-
 var pageController = {
   showGuides: function() {
     $('#show-all-guides').show();
@@ -27,5 +25,5 @@ var pageController = {
     $('.logout').show();
   }
 
-}
+};
 
