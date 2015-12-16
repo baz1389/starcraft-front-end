@@ -24,16 +24,6 @@ var pageController = {
     guide_api.readAll(readAllCb);
   },
 
-
-  // hideForLogin: function() {
-  //   $('#updateGuideContainer').hide();
-  //   $('#createGuideContainer').hide();
-  //   $('#show-all-guides').hide();
-  //   $('#showAllGuidesTable').hide();
-  //   $('#showAllGuides').hide();
-  //   $('#single-guide').hide();
-  // },
-
   showVisualButtons: function() {
     $('.showTable').show();
     $('.showCreate').show();

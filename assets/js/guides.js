@@ -21,9 +21,17 @@ $(document).ready(function() {
     $('.API-login').show();
   });
 
-  // $('.register-a2').on('click', function(e) {
+  $('.register-a2').on('click', function(e) {
+    e.preventDefault();
+    $('.API-register').show();
+    $('.API-login').hide();
+  });
 
-  // });
+  $('.login-a2').on('click', function(e) {
+    e.preventDefault();
+    $('.API-register').hide();
+    $('.API-login').show();
+  });
 
   // REGISTER
   $('#register').on('submit', function(e) {
