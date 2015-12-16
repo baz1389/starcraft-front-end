@@ -10,14 +10,6 @@ $(document).ready(function() {
 
   var data;
 
-  $('#updateGuideContainer').hide();
-  $('#createGuideContainer').hide();
-  $('#show-all-guides').hide();
-  $('.showTable').hide();
-  $('.showCreate').hide();
-  $('#single-guide').hide();
-
-
   // REGISTER
   $('#register').on('submit', function(e) {
     e.preventDefault();
@@ -33,7 +25,6 @@ $(document).ready(function() {
   // LOGIN
   $('#login').on('submit', function(e) {
     e.preventDefault();
-    console.log("click");
     var credentials = form2object(this);
     // console.log(credentials);
     guide_api.login(credentials, loginCb);
@@ -47,8 +38,7 @@ $(document).ready(function() {
     $('.user-messages').fadeIn();
     $('.user-messages').html('<p>Welcome, ' + credentials.username + '</p>');
     $('#show-all-guides').show();
-    $('.showTable').show();
-    $('.showCreate').show();
+    pageController.showVisualButtons();
 
   });
 
@@ -90,7 +80,6 @@ $(document).ready(function() {
   //READ ONE GUIDE
   $("#show-all-guides").on("click", function(e){
     e.preventDefault();
-    console.log("clicked show guide");
     var id = $(e.target).data("id");
     if(id === undefined){
       return;
