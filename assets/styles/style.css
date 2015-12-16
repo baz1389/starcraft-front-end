@@ -3,19 +3,13 @@ body {
   font-family: 'Lato', sans-serif;
   font-weight: 250;
   font-size: 1em;
-  color: #fff;
+  color: white;
 
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#13262b+0,012c38+44,002533+100 */
-  background: #13262b; /* Old browsers */
-  background: -moz-linear-gradient(top,  #13262b 0%, #012c38 44%, #002533 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top,  #13262b 0%,#012c38 44%,#002533 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom,  #13262b 0%,#012c38 44%,#002533 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#13262b', endColorstr='#002533',GradientType=0 ); /* IE6-9 */
-  /*background: url(../images/background2.jpg) no-repeat center;
-  background-size: cover;*/
+
+  background: url(../images/space2.jpg) ;
+  background-position: center top;
+
 }
-
-/* Inputs and Buttons */
 
 input {
   width: 100%;
@@ -51,7 +45,8 @@ td {
 }
 
 header{
-  background-color: #005580;
+  background-color: black;
+  /*background-color:  #245c81;*/
   padding: 10px;
   min-height: 50px;
   /*height: 90px;*/
@@ -116,19 +111,25 @@ nav ul li a:hover {
   color: rgba(49,169,200,0.3);
 }
 
-/*.wrapper {
-  width: 100%;
-  height:auto;
-  padding: 30px 0 250px;
-  background: url(../images/sc2background.jpg) no-repeat center center;
-  -webkit-background-size:cover;
-  -moz-background-size:cover;
-  -o-background-size:cover;
-  background-size:cover;
-}*/
 
 .show-guide-button {
-  background-color: rgba(49,169,200,0.3);
+  background-color: #245c81;
+}
+
+.edit-button, .delete-button {
+  width: 100%;
+  border: 0;
+  margin: 5px 0;
+  font-size:.8em;
+  padding:7px 0;
+  background-color:  #245c81;
+  color: #fff;
+  text-indent: 10px;
+}
+
+.edit-button:hover, .delete-button:hover {
+  background-color: #24748c;
+  color: #fff;
 }
 
 button, input[type="submit"] {
@@ -136,7 +137,7 @@ button, input[type="submit"] {
   border: 0;
   padding: 10px;
   margin: 5px 0;
-  background-color: #005580;
+  background-color: #245c81;
   color: #fff;
 }
 
@@ -164,7 +165,7 @@ a {
   margin-left: -50px;
   width: 25%;
   height: 37%;
-  background-color: rgba(0,0,0,0.5);
+  /*background-color: rgba(0,0,0,0.5);*/
 }
 
 .API-login {
@@ -175,7 +176,7 @@ a {
   margin-left: -50px;
   width: 25%;
   height: 37%;
-  background-color: rgba(0,0,0,0.5);
+  /*background-color: rgba(0,0,0,0.5);*/
 }
 
 .register-login {
@@ -203,7 +204,7 @@ a {
   color: white;
   bottom: 10;
   padding: 10px;
-  /*background-color: #005580;*/
+  /*background-color:  #245c81;*/
 }
 
 #createGuideContainer, #updateGuideContainer {
@@ -224,7 +225,8 @@ a {
   width: 67%;
   margin-top: 12%;
   margin-left: 21%;
-  background: #005580;
+  /*background:  #245c81;*/
+  border: 10px;
   /*margin: auto;*/
   padding: 10px;
 }

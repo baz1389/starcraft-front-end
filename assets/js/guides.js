@@ -41,8 +41,9 @@ $(document).ready(function() {
     console.log("successful register!");
      // hide register container
     $('.API-register').slideUp();
+    $('.API-login').fadeIn('fast');
 
-    $('.user-messages').html('<p>Successfully registered as, ' + credentials.username + '</p>');
+    $('.user-messages').html('<p>Successfully registered as ' + credentials.username + '!</p>');
   });
 
   // LOGIN
@@ -56,11 +57,15 @@ $(document).ready(function() {
     pageController.showVisualButtons();
     // fade up user-messages
     $('.user-messages').fadeIn();
-    $('.user-messages').html('<p>Welcome, ' + credentials.username + '</p>');
+    $('.user-messages').html('<p>Welcome, ' + credentials.username + '!</p>');
     $('#show-all-guides').show();
     guide_api.login(credentials, loginCb);
 
   });
+
+  //LOGOUT
+
+
 
   // shows table with all guides
   $('.showTable').on('click', function(e) {
