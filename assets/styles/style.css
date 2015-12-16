@@ -1,6 +1,7 @@
+
 body {
   font-family: 'Lato', sans-serif;
-  font-weight: 300;
+  font-weight: 250;
   font-size: 1em;
   color: #fff;
 
@@ -39,7 +40,7 @@ td {
   text-align: center;
 }
 
-#visuals, .edit-guide, .delete-guide {
+ .edit-guide, .delete-guide {
   width: 10%;
   top: 110px;
   left: 39%;
@@ -47,6 +48,72 @@ td {
   bottom: 10;
   padding: 10px;
 
+}
+
+header{
+  background-color: #005580;
+  padding: 10px;
+  min-height: 50px;
+  /*height: 90px;*/
+  width: 100%;
+}
+nav{
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+nav h1 {
+  /*font-size: 100%;
+  margin-top: 1%;*/
+  width: 250px;
+  height: 15px;
+  top: 110px;
+  left: 39%;
+  float: left;
+  color: white;
+  bottom: 10;
+  padding: 10px;
+}
+
+nav h4 {
+  font-size: 75%;
+  font-weight: 100;
+  width: 250px;
+  height: 15px;
+  position: relative;
+  bottom: 0;
+  color: white;
+
+}
+
+nav ul{
+  list-style-type: none;
+  float: right;
+
+}
+nav ul li{
+  display: inline;
+  padding: 15px;
+  line-height: 40px;
+  top: 0%;
+}
+nav ul li a{
+  color: white;
+  text-decoration: none;
+}
+
+nav ul li:after {
+   content:" | ";
+   padding: 0 5px 0 15px;
+}
+
+nav ul li:last-child:after {
+   content:" ";
+}
+
+
+nav ul li a:hover {
+  color: rgba(49,169,200,0.3);
 }
 
 /*.wrapper {
@@ -90,18 +157,24 @@ a {
 
 /* Register and Login */
 .API-register {
-  width: 20%;
-  position: fixed;
-  top: 0px;
-  right: 0px;
+  /*position: absolute;*/
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -50px;
+  width: 25%;
+  height: 37%;
   background-color: rgba(0,0,0,0.5);
 }
 
 .API-login {
-  width: 20%;
-  position: fixed;
-  bottom: 0px;
-  right: 0px;
+   /*position: absolute;*/
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -50px;
+  width: 25%;
+  height: 37%;
   background-color: rgba(0,0,0,0.5);
 }
 
@@ -110,7 +183,7 @@ a {
 }
 
 .landingPage {
-   margin: 0px auto 0;
+  margin: 0px auto 0;
   padding: 5px 5px 0px;
   color: white;
   overflow: auto;
@@ -118,7 +191,6 @@ a {
 }
 
 .user-messages > p {
-  text-align: center;
   margin-top: 1px;
 }
 
@@ -127,8 +199,8 @@ a {
   height: 15px;
   top: 110px;
   left: 39%;
+  float: left;
   color: white;
-  position: absolute;
   bottom: 10;
   padding: 10px;
   /*background-color: #005580;*/
@@ -148,19 +220,12 @@ a {
   margin-right: 1%;
 }
 
-/*#show-all-guides {
-  width: 50%;
-  margin-top: 4%;
-  float: left;
-  background: #e69900;
-}*/
-
 #showAllGuidesTable, #single-guide {
-  width: 60%;
-  margin-top: 4%;
+  width: 67%;
+  margin-top: 12%;
+  margin-left: 21%;
   background: #005580;
-  /*background: #e6e6e6;*/
-  margin: auto;
+  /*margin: auto;*/
   padding: 10px;
 }
 

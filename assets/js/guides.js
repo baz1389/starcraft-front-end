@@ -10,6 +10,21 @@ $(document).ready(function() {
 
   var data;
 
+  $('.login').on('click', function(e) {
+    e.preventDefault();
+    $('#updateGuideContainer').hide();
+    $('#createGuideContainer').hide();
+    $('#show-all-guides').hide();
+    $('#showAllGuidesTable').hide();
+    $('#showAllGuides').hide();
+    $('#single-guide').hide();
+    $('.API-login').show();
+  });
+
+  // $('.register-a2').on('click', function(e) {
+
+  // });
+
   // REGISTER
   $('#register').on('submit', function(e) {
     e.preventDefault();
@@ -26,25 +41,25 @@ $(document).ready(function() {
   $('#login').on('submit', function(e) {
     e.preventDefault();
     var credentials = form2object(this);
-    // console.log(credentials);
-    guide_api.login(credentials, loginCb);
 
     // hide login container
     $('.API-login').slideUp();
     $('.API-register').hide();
-
-
+    pageController.showVisualButtons();
     // fade up user-messages
     $('.user-messages').fadeIn();
     $('.user-messages').html('<p>Welcome, ' + credentials.username + '</p>');
     $('#show-all-guides').show();
-    pageController.showVisualButtons();
+    guide_api.login(credentials, loginCb);
 
   });
 
   // shows table with all guides
   $('.showTable').on('click', function(e) {
+    $('.API-register').hide();
+    $('.API-login').hide();
     pageController.showGuides();
+    guide_api.readAll(readAllCb);
   });
 
   // shows create guide form
@@ -52,6 +67,8 @@ $(document).ready(function() {
     $('#createGuideContainer').show();
     $('#single-guide').hide();
     $('#show-all-guides').hide();
+    $('.API-register').hide();
+    $('.API-login').hide();
   });
 
   // CREATE A GUIDE

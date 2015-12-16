@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Starcraft</title>
+    <link rel="stylesheet" type="text/css" href="assets/styles/html5reset.css">
     <link rel="stylesheet" type="text/css" href="assets/styles/style.css">
     <script src="assets/js/jquery.js" type="text/javascript" defer charset="utf-8"></script>
     <script src="assets/js/handlebars.js" type="text/javascript" defer charset="utf-8"></script>
@@ -14,22 +15,34 @@
   </head>
   <body>
 
+    <header id="navbar">
+      <nav>
+
+        <h1>Home Supply Depot</h1>
+        <h4>All Your SC2 Needs and More</h4>
+        <div class="user-messages "></div>
+
+          <ul id="visualButtons">
+            <li><a href="#" class="showCreate">Create a Guide</a></li>
+            <li><a href="#" class="showTable">See Guides</a></li>
+            <li><a href="#" class="login">Login</a></li>
+            <li><a href="#" class="logout">Logout</a></li>
+          </ul>
+
+      </nav>
+    </header>
+
     <div class="wrapper">
 
       <section class="span_4_of_12 pad-lft">
 
         <!-- begin landingPage -->
         <div class="landingPage">
-          <h1>Starcraft 2 Guides</h1>
-          <h2>Climbing the ladder to Bronze.</h2>
+          <h2>Latest Guides</h2>
         </div>
         <!-- end landingPage -->
 
       </section>
-
-      <!-- begin user messages box -->
-      <div class=" span_4_of_12 right-fix user-messages "></div>
-      <!-- end user messages box -->
 
       <!-- begin register -->
       <div class="API-register hidden">
@@ -62,12 +75,6 @@
         </div>
       </div>
       <!-- end login -->
-
-      <div id="visuals">
-        <button type="" class="showTable">See Guides</button>
-        <button type="" class="showCreate">Create a Guide</button>
-        <button type="" class="logout">Logout</button>
-      </div>
 
       <!-- create guide -->
       <div id="createGuideContainer" data-pollid="">

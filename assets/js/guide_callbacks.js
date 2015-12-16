@@ -33,7 +33,7 @@ var loginCb = function (error, data) {
     // console.log(JSON.stringify(data, null, 4));
     console.log("Logged in!");
   }
-  guide_api.readAll(readAllCb);
+  // guide_api.readAll(readAllCb);
 };
 
 var createCb = function(error, data) {
@@ -58,6 +58,8 @@ var readAllCb = function(error, data) {
   // console.log("result is " + JSON.stringify(data, null, 4));
   var newHTML = template({guides: data});
   $('#showAllGuides').show;
+  $('#show-all-guides').show;
+  $('#showAllGuidesTable').show;
   $('#showAllGuides').html(newHTML);
 
 };
