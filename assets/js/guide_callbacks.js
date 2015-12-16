@@ -1,13 +1,5 @@
 'use strict'
 
- // var guide = {
- //  id: null,
- //  playerRace: null,
- //  title: null,
- //  matchup: null,
- //  author: null
- // };
-
 var form2object = function(form) {
   var data = {};
   $(form).children().each(function(index, element) {
@@ -90,6 +82,17 @@ var readOneCb = function(error, data) {
 
 };
 
+var updateCb = function(error, data) {
+  if (error) {
+    console.error(error);
+    $(".user-messages").html("<strong>Error! Guide could not be updated!</strong>");
+    return;
+  }
+  debugger;
+  guide_api.readAll(readAllCb);
+  pageController.showGuides();
+};
+
 var deleteCb = function(error, data) {
   if (error) {
     console.error(error);
@@ -100,23 +103,3 @@ var deleteCb = function(error, data) {
   guide_api.readAll(readAllCb);
   pageController.showGuides();
 };
-
-
-  // $("#one-blog").on("click", '#delete-blog', function(event){
-  //   event.preventDefault();
-  //   console.log($(this).data("id"));
-  //   var id = $(this).data("id");
-  //   blogRequest.delete(id, function(){
-  //     $("#one-blog").empty();
-  //     $("#entire-body").show();
-  //     blogRequest.getAll(function(error, data){
-  //   $("#showAllBlogTableBody").empty();
-  //   $("#display-blogs-table").show();
-  //   $("#one-blog").hide();
-  //   var template = Handlebars.compile($("#showAllBlogHandlebar").html());
-  //     $('#result').val(JSON.stringify(data, null, 4)); //logs to test box
-  //     var newHTML = template({blogs: data.blogs});
-  //     $("#showAllBlogTableBody").html(newHTML);
-  //     });
-  //   });
-  // });

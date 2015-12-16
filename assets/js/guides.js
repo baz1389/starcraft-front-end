@@ -8,6 +8,8 @@ $(document).ready(function() {
     }
   });
 
+  var data;
+
   $('#updateGuideContainer').hide();
   $('#createGuideContainer').hide();
   $('#show-all-guides').hide();
@@ -72,7 +74,7 @@ $(document).ready(function() {
     var matchup = target.matchup.value;
     var description = target.descriptionInput.value;
 
-    var data = {
+    data = {
       title: title,
       playerRace: playerRace,
       matchup: matchup,
@@ -85,7 +87,7 @@ $(document).ready(function() {
 
   });
 
-
+  //READ ONE GUIDE
   $("#show-all-guides").on("click", function(e){
     e.preventDefault();
     console.log("clicked show guide");
@@ -98,20 +100,46 @@ $(document).ready(function() {
     guide_api.readOne(id, readOneCb);
   });
 
+  //Shows UPDATE form
+  $("#single-guide").on("click", "#edit-guide", function(e) {
 
-$("#single-guide").on("click", '#delete-guide', function(e) {
-  e.preventDefault();
-  debugger;
-  var id = $(this).data("id");
-  console.log($(this).data("id"));
+    $('#single-guide').hide();
+    $('#updateGuideContainer').show();
+    $('#updateGuide').show();
 
-  guide_api.deleteGuide(id, deleteCb);
-});
-
+  });
 
 
+  $("#updateGuide").on("submit", function(e) {
+    e.preventDefault();
+    debugger;
+      var id = $("#edit-guide").data("id");
+    console.log($(this).data("id"));
 
+    var target = e.target;
+    var title = target.guideTitle.value;
+    var playerRace = target.playerRace.value;
+    var matchup = target.matchup.value;
+    var description = target.descriptionInput.value;
 
+    data = {
+      _id: id,
+      title: title,
+      playerRace: playerRace,
+      matchup: matchup,
+      description: description
+    }
 
+    guide_api.updateGuide(id, data, updateCb)
+  });
+
+  //DELETE A GUIDE
+  $("#single-guide").on("click", "#delete-guide", function(e) {
+    e.preventDefault();
+    var id = $(this).data("id");
+    console.log($(this).data("id"));
+
+    guide_api.deleteGuide(id, deleteCb);
+  });
 
 }); //end document ready

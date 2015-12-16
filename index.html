@@ -142,51 +142,43 @@
       </div>
       <!-- end of show guides table -->
 
-      <!-- UPDATE guide -->
+       <!-- UPDATE guide -->
       <div id="updateGuideContainer">
-        <form id="updateNewGuide">
-          <div class="row">
-            <div class="updateGuide">
-              <label for="updateGuideTitle">Guide Title</label>
-              <input class="u-full-width" type="text" placeholder="Guide Title..." id="titleInput">
-            </div>
-            <div class="updateGuide">
-              <label for="updateSelectPlayerRace">Player Race</label>
-              <select class="u-full-width" id="selectPlayerRace">
-                <option value="Option 1">Terran</option>
-                <option value="Option 2">Protoss</option>
-                <option value="Option 3">Zerg</option>
-              </select>
-            </div>
-            <div class="updateGuide">
-              <label for="updateSelectMatchup">Matchup</label>
-              <select class="u-full-width" id="selectMatchup">
-                <option value="TvT">TvT</option>
-                  <option value="TvP">TvP</option>
-                  <option value="TvZ">TvZ</option>
-                  <option value="PvT">PvT</option>
-                  <option value="PvP">PvP</option>
-                  <option value="PvZ">PvZ</option>
-                  <option value="ZvT">ZvT</option>
-                  <option value="ZvP">ZvP</option>
-                  <option value="ZvZ">ZvZ</option>
-                  <option value="TvT / TvP">TvT / TvP</option>
-                  <option value="TvT / TvZ">TvT / TvZ</option>
-                  <option value="TvP / TvZ">TvP / TvZ</option>
-                  <option value="PvP / PvT">PvP / PvT</option>
-                  <option value="PvP / PvZ">PvP / PvZ</option>
-                  <option value="PvT / PvZ">PvT / PvZ</option>
-                  <option value="ZvZ / ZvT">ZvZ / ZvT</option>
-                  <option value="ZvZ / ZvP">ZvZ / ZvP</option>
-                  <option value="ZvT / ZvP">ZvT / ZvP</option>
-                  <option value="TvT / TvP / TvZ">TvT / TvP / TvZ</option>
-                  <option value="PvP / PvT / PvZ">PvP / PvT / PvZ</option>
-                  <option value="ZvZ / ZvT / ZvP">ZvZ / ZvT / ZvP</option>
-              </select>
-            </div>
-          </div>
-          <label for="updateGuideDescription">Description</label>
-          <textarea class="u-full-width" placeholder="Your updated guide here..." id="updateDescriptionInput"></textarea>
+        <form id="updateGuide">
+          <label for="guideTitle">Guide Title</label>
+          <input class="u-full-width" type="text" placeholder="Guide..." id="guideTitle" name="title">
+          <label for="playerRace">Player Race</label>
+          <select class="u-full-width" id="playerRace">
+            <option value="Terran">Terran</option>
+            <option value="Protoss">Protoss</option>
+            <option value="Zerg">Zerg</option>
+          </select>
+          <label for="matchup">Matchup</label>
+          <select class="u-full-width" id="matchup" name="matchup">
+            <option value="TvT">TvT</option>
+            <option value="TvP">TvP</option>
+            <option value="TvZ">TvZ</option>
+            <option value="PvT">PvT</option>
+            <option value="PvP">PvP</option>
+            <option value="PvZ">PvZ</option>
+            <option value="ZvT">ZvT</option>
+            <option value="ZvP">ZvP</option>
+            <option value="ZvZ">ZvZ</option>
+            <option value="TvT / TvP">TvT / TvP</option>
+            <option value="TvT / TvZ">TvT / TvZ</option>
+            <option value="TvP / TvZ">TvP / TvZ</option>
+            <option value="PvP / PvT">PvP / PvT</option>
+            <option value="PvP / PvZ">PvP / PvZ</option>
+            <option value="PvT / PvZ">PvT / PvZ</option>
+            <option value="ZvZ / ZvT">ZvZ / ZvT</option>
+            <option value="ZvZ / ZvP">ZvZ / ZvP</option>
+            <option value="ZvT / ZvP">ZvT / ZvP</option>
+            <option value="TvT / TvP / TvZ">TvT / TvP / TvZ</option>
+            <option value="PvP / PvT / PvZ">PvP / PvT / PvZ</option>
+            <option value="ZvZ / ZvT / ZvP">ZvZ / ZvT / ZvP</option>
+          </select>
+          <label for="descriptionInput">Description</label>
+          <textarea class="u-full-width" placeholder="Description..." id="descriptionInput" name="desc"></textarea>
           <input class="button-primary" type="submit" value="Update!">
         </form>
       </div>

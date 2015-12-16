@@ -4,6 +4,7 @@ var pageController = {
     $('#showAllGuidesTable').show();
     $('#single-guide').hide();
     $('#createGuideContainer').hide();
+    $('#updateGuideContainer').hide();
   }
 
 }
