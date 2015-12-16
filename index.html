@@ -87,6 +87,7 @@
             <option value="Protoss">Protoss</option>
             <option value="Zerg">Zerg</option>
           </select>
+          <br>
           <label for="matchup">Matchup</label>
           <select class="u-full-width" id="matchup" name="matchup">
             <option value="TvT">TvT</option>
@@ -111,6 +112,7 @@
             <option value="PvP / PvT / PvZ">PvP / PvT / PvZ</option>
             <option value="ZvZ / ZvT / ZvP">ZvZ / ZvT / ZvP</option>
           </select>
+          <br>
           <label for="descriptionInput">Description</label>
           <textarea class="u-full-width" placeholder="Description..." id="descriptionInput" name="desc"></textarea>
           <input class="button-primary" type="submit" value="Create!">
@@ -153,14 +155,15 @@
        <!-- UPDATE guide -->
       <div id="updateGuideContainer">
         <form id="updateGuide">
-          <label for="guideTitle">Guide Title</label>
-          <input class="u-full-width" type="text" placeholder="Guide..." id="guideTitle" name="title">
+          <label for="guideTitle">Edit Guide</label>
+          <input class="u-full-width" type="text" placeholder="Guide Title..." id="guideTitle" name="title">
           <label for="playerRace">Player Race</label>
           <select class="u-full-width" id="playerRace">
             <option value="Terran">Terran</option>
             <option value="Protoss">Protoss</option>
             <option value="Zerg">Zerg</option>
           </select>
+          <br>
           <label for="matchup">Matchup</label>
           <select class="u-full-width" id="matchup" name="matchup">
             <option value="TvT">TvT</option>
@@ -185,6 +188,7 @@
             <option value="PvP / PvT / PvZ">PvP / PvT / PvZ</option>
             <option value="ZvZ / ZvT / ZvP">ZvZ / ZvT / ZvP</option>
           </select>
+          <br>
           <label for="descriptionInput">Description</label>
           <textarea class="u-full-width" placeholder="Description..." id="descriptionInput" name="desc"></textarea>
           <input class="button-primary" type="submit" value="Update!">
@@ -197,7 +201,7 @@
 
       <script id="show-one-guide" type = "text/x-handlebars-template">
         <h2>{{title}}</h2>
-        <h3>{{playerRace}} : {{matchup}}</h3>
+        <h4>{{playerRace}} : {{matchup}}</h4>
         <h3>Description</h3>
         <p>{{{description}}}</p>
         <button id="edit-guide" class="edit-button" data-id={{_id}}>Edit</button>

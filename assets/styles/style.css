@@ -212,13 +212,21 @@ a {
   top: 160px;
   position: absolute;
   bottom: 50px;
-  margin-left: 56%;
+  margin-left: 35%;
+}
+
+#guideTitle {
+  width: 400px;
 }
 
 #descriptionInput {
   width: 400px;
   height: 300px;
   margin-right: 1%;
+}
+
+#updateGuide input, #createNewGuide input {
+  width: 405px;
 }
 
 #showAllGuidesTable, #single-guide {
@@ -244,3 +252,14 @@ a {
   float: left;
   bottom: 10px;
 }
+
+#show-one-guide h3 {
+  padding: 10px;
+  float: left:;
+}
+
+#show-one-guide h4 {
+  padding: 10px;
+  text-align: center;
+}
+
