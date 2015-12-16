@@ -10,8 +10,8 @@ body {
   background: -webkit-linear-gradient(top,  #13262b 0%,#012c38 44%,#002533 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to bottom,  #13262b 0%,#012c38 44%,#002533 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#13262b', endColorstr='#002533',GradientType=0 ); /* IE6-9 */
-  background: url(../images/background2.jpg) no-repeat center;
-  background-size: cover;
+  /*background: url(../images/background2.jpg) no-repeat center;
+  background-size: cover;*/
 }
 
 /* Inputs and Buttons */
@@ -131,7 +131,7 @@ a {
   position: absolute;
   bottom: 10;
   padding: 10px;
-  background-color: #005580;
+  /*background-color: #005580;*/
 }
 
 #createGuideContainer, #updateGuideContainer {
@@ -159,6 +159,7 @@ a {
   width: 60%;
   margin-top: 4%;
   background: #005580;
+  /*background: #e6e6e6;*/
   margin: auto;
   padding: 10px;
 }

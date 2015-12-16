@@ -41,8 +41,8 @@ $(document).ready(function() {
     $('.API-register').hide();
 
 
-    // fade up user-messages and create-poll button
-    // $('.user-messages').fadeIn();
+    // fade up user-messages
+    $('.user-messages').fadeIn();
     $('.user-messages').html('<p>Welcome, ' + credentials.username + '</p>');
     $('#show-all-guides').show();
     $('.showTable').show();
@@ -52,10 +52,7 @@ $(document).ready(function() {
 
   // shows table with all guides
   $('.showTable').on('click', function(e) {
-    $('#show-all-guides').show();
-    $('#showAllGuidesTable').show();
-    $('#single-guide').hide();
-    $('#createGuideContainer').hide();
+    pageController.showGuides();
   });
 
   // shows create guide form
@@ -96,16 +93,25 @@ $(document).ready(function() {
     if(id === undefined){
       return;
     }
-    debugger;
-    console.log("guide id is " + id);
 
+    console.log("guide id is " + id);
     guide_api.readOne(id, readOneCb);
   });
 
 
+$("#single-guide").on("click", '#delete-guide', function(e) {
+  e.preventDefault();
+  debugger;
+  var id = $(this).data("id");
+  console.log($(this).data("id"));
 
-
-
-
-
+  guide_api.deleteGuide(id, deleteCb);
 });
+
+
+
+
+
+
+
+}); //end document ready
