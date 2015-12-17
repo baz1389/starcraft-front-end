@@ -118,14 +118,14 @@ nav ul li a:hover {
 }
 
 .edit-button, .delete-button {
-  width: 100%;
+  width: 10%;
   border: 0;
   margin: 5px 0;
   font-size:.8em;
   padding:7px 0;
   background-color:  #245c81;
   color: #fff;
-  text-indent: 10px;
+  text-align: center;
 }
 
 .edit-button:hover, .delete-button:hover {
@@ -139,6 +139,7 @@ button, input[type="submit"] {
   padding: 10px;
   margin: 5px 0;
   background-color: #245c81;
+  border-radius: 15px;
   color: #fff;
 }
 
@@ -227,7 +228,7 @@ a {
   padding: 10px;
 }
 
-#single-guide > h2, h3 {
+#single-guide > h2 {
  text-align: center;
 }
 
@@ -241,13 +242,23 @@ a {
   bottom: 10px;
 }
 
-#show-one-guide h3 {
+#single-guide h3 {
   padding: 10px;
-  float: left:;
+  text-align: left;
+  font-size: 150%;
 }
 
-#show-one-guide h4 {
+#single-guide h4 {
   padding: 10px;
   text-align: center;
+  margin: 0 auto;
+
+  /*font-size: 75%;*/
+  font-weight: 100;
+  width: 250px;
+  height: 15px;
+  position: relative;
+  bottom: 0;
+  color: white;
 }
 
