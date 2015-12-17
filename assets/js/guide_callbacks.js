@@ -22,20 +22,6 @@ var regCb = function (error, data) {
   console.log(JSON.stringify(data, null, 4));
 };
 
-// login callback
-var loginCb = function (error, data) {
-
-  if (error) {
-    console.error(error);
-    $(".user-messages").html("<strong>Error! Login failed!</strong>");
-    return;
-  }
-  $('.API-login').slideUp();
-  $('.API-register').hide();
-  console.log("Logged in!");
-  // guide_api.readAll(readAllCb);
-};
-
 var createCb = function(error, data) {
   if (error) {
     console.error(error);
