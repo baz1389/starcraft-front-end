@@ -12,6 +12,7 @@
     <script src="assets/js/guides.js" type="text/javascript" defer charset="utf-8"></script>
     <script src="assets/js/guide_callbacks.js" type="text/javascript" defer charset="utf-8"></script>
     <script src="assets/js/ux.js" type="text/javascript" defer charset="utf-8"></script>
+    <script src="node_modules/bootstrap-markdown/js/bootstrap-markdown.js" type="text/javascript" defer charset="utf-8"></script>
   </head>
   <body>
 
@@ -116,7 +117,7 @@
           </select>
           <br>
           <label for="descriptionInput">Description</label>
-          <textarea class="u-full-width" placeholder="Description..." id="descriptionInput" name="desc"></textarea>
+          <textarea data-provide="markdown" class="u-full-width" placeholder="Description..." id="descriptionInput" name="desc"></textarea>
           <input class="button-primary" type="submit" value="Create!">
         </form>
       </div>
@@ -192,7 +193,7 @@
           </select>
           <br>
           <label for="descriptionInput">Description</label>
-          <textarea class="u-full-width" placeholder="Description..." id="descriptionInput" name="desc"></textarea>
+          <textarea data-provide="markdown" class="u-full-width" placeholder="Description..." id="descriptionInput" name="desc"></textarea>
           <input class="button-primary" type="submit" value="Update!">
         </form>
       </div>
@@ -207,7 +208,7 @@
         <br>
         <h3>Description</h3>
         <br>
-        <p>{{{description}}}</p>
+        <p>{{description}}</p>
         <br>
         <button id="edit-guide" class="edit-button" data-id={{_id}}>Edit</button>
         <button id="delete-guide" class="delete-button" data-id={{_id}}>Delete</button>

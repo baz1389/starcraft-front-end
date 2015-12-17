@@ -81,6 +81,7 @@ var readOneCb = function(error, data) {
 
   $("#single-guide").show();
   $("#single-guide").html(newHTML);
+  $('#single-guide > p').html(data[0].description.replace(/\n/g, '<br />'));
 
 };
 
