@@ -32,6 +32,7 @@ title {
 
 td {
   text-align: center;
+  padding: 6px;
 }
 
  .edit-guide, .delete-guide {
@@ -217,8 +218,9 @@ a {
 
 #showAllGuidesTable, #single-guide {
   width: 67%;
-  margin-top: 12%;
-  margin-left: 21%;
+  margin: 100px auto;
+  /*margin-top: 12%;
+  margin-left: 21%;*/
   /*background:  #245c81;*/
   border: 10px;
   /*margin: auto;*/
