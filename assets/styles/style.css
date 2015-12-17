@@ -1,0 +1,264 @@
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-weight: 250;
+  font-size: 1em;
+  color: white;
+
+
+  background: url(../images/space2.jpg) ;
+  background-position: center top;
+
+}
+
+input {
+  width: 100%;
+  border:0;
+  padding:7px 0;
+  margin: 5px 0;
+  font-size:.8em;
+  display: block;
+  color: #444;
+  text-indent: 10px;
+}
+
+title {
+  width: 60%;
+  margin-top: 4%;
+  margin: auto;
+  padding: 10px;
+  font-size: 300%;
+}
+
+td {
+  text-align: center;
+  padding: 6px;
+}
+
+ .edit-guide, .delete-guide {
+  width: 10%;
+  top: 110px;
+  left: 39%;
+  color: white;
+  bottom: 10;
+  padding: 10px;
+
+}
+
+header{
+  background-color: black;
+  /*background-color:  #245c81;*/
+  padding: 10px;
+  min-height: 50px;
+  /*height: 90px;*/
+  width: 100%;
+}
+nav{
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+nav h1 {
+  /*font-size: 100%;
+  margin-top: 1%;*/
+  width: 250px;
+  height: 15px;
+  top: 110px;
+  left: 39%;
+  float: left;
+  color: white;
+  bottom: 10;
+  padding: 10px;
+}
+
+nav h4 {
+  font-size: 75%;
+  font-weight: 100;
+  width: 250px;
+  height: 15px;
+  position: relative;
+  bottom: 0;
+  margin-left: 5px;
+  color: white;
+
+}
+
+nav ul{
+  list-style-type: none;
+  float: right;
+
+}
+nav ul li{
+  display: inline;
+  padding: 15px;
+  line-height: 40px;
+  top: 0%;
+}
+nav ul li a{
+  color: white;
+  text-decoration: none;
+}
+
+nav ul li:after {
+   content:" | ";
+   padding: 0 5px 0 15px;
+}
+
+nav ul li:last-child:after {
+   content:" ";
+}
+
+
+nav ul li a:hover {
+  color: rgba(49,169,200,0.3);
+}
+
+
+.show-guide-button {
+  background-color: #245c81;
+}
+
+.edit-button, .delete-button {
+  width: 10%;
+  border: 0;
+  margin: 5px 0;
+  font-size:.8em;
+  padding:7px 0;
+  background-color:  #245c81;
+  color: #fff;
+  text-align: center;
+}
+
+.edit-button:hover, .delete-button:hover {
+  background-color: #24748c;
+  color: #fff;
+}
+
+button, input[type="submit"] {
+  width: 100%;
+  border: 0;
+  padding: 10px;
+  margin: 5px 0;
+  background-color: #245c81;
+  border-radius: 15px;
+  color: #fff;
+}
+
+button:hover, input[type="submit"]:hover {
+  background-color: #24748c;
+  color: #fff;
+}
+
+button:active, input[type="submit"]:active {
+  background-color: orange;
+  color: #fff;
+}
+
+a {
+    text-decoration: none;
+    color: #2d6987;
+}
+
+.API-login, .API-register {
+  top: 50%;
+  left: 50%;
+  margin-top: 50px;
+  margin-left: 37%;
+  width: 25%;
+  height: 37%;
+}
+
+.register-login {
+  padding: 20px 10%;
+}
+
+.landingPage {
+  margin: 0px auto 0;
+  padding: 5px 5px 0px;
+  color: white;
+  overflow: auto;
+  text-align: center;
+}
+
+.user-messages > p {
+  margin-top: 1px;
+}
+
+.user-messages {
+  width: 250px;
+  height: 15px;
+  top: 110px;
+  left: 39%;
+  float: left;
+  color: white;
+  bottom: 10;
+  padding: 10px;
+  /*background-color:  #245c81;*/
+}
+
+#createGuideContainer, #updateGuideContainer {
+  width: 40%;
+  top: 160px;
+  position: absolute;
+  bottom: 50px;
+  margin-left: 35%;
+}
+
+#guideTitle {
+  width: 400px;
+}
+
+#descriptionInput {
+  width: 400px;
+  height: 300px;
+  margin-right: 1%;
+}
+
+#updateGuide input, #createNewGuide input {
+  width: 405px;
+}
+
+#showAllGuidesTable, #single-guide {
+  width: 67%;
+  margin: 100px auto;
+  /*margin-top: 12%;
+  margin-left: 21%;*/
+  /*background:  #245c81;*/
+  border: 10px;
+  /*margin: auto;*/
+  padding: 10px;
+}
+
+#single-guide > h2 {
+ text-align: center;
+}
+
+#single-guide > h2 {
+ font-size: 200%;
+}
+
+#updateGuide {
+  width: 70%;
+  float: left;
+  bottom: 10px;
+}
+
+#single-guide h3 {
+  text-align: left;
+  font-size: 150%;
+}
+
+#single-guide h4 {
+  padding: 10px;
+  text-align: center;
+  margin: 0 auto;
+
+  /*font-size: 75%;*/
+  font-weight: 100;
+  width: 250px;
+  height: 15px;
+  position: relative;
+  bottom: 0;
+  color: white;
+}
+

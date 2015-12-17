@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Starcraft</title>
+    <link rel="stylesheet" type="text/css" href="assets/styles/html5reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/styles/style.css">
+    <script src="assets/js/jquery.js" type="text/javascript" defer charset="utf-8"></script>
+    <script src="assets/js/handlebars.js" type="text/javascript" defer charset="utf-8"></script>
+    <script src="assets/js/api.js" type="text/javascript" defer charset="utf-8"></script>
+    <script src="assets/js/guides.js" type="text/javascript" defer charset="utf-8"></script>
+    <script src="assets/js/guide_callbacks.js" type="text/javascript" defer charset="utf-8"></script>
+    <script src="assets/js/ux.js" type="text/javascript" defer charset="utf-8"></script>
+  </head>
+  <body>
+
+    <header id="navbar">
+      <nav>
+
+        <h1>Home Supply Depot</h1>
+        <h4>All Your SC2 Needs and More</h4>
+        <div class="user-messages "></div>
+
+          <ul id="visualButtons">
+            <li><a href="#" class="showCreate">Create a Guide</a></li>
+            <li><a href="#" class="showTable">See Guides</a></li>
+            <li><a href="#" class="login">Login</a></li>
+            <li><a href="#" class="logout">Logout</a></li>
+          </ul>
+
+      </nav>
+    </header>
+
+    <div class="wrapper">
+
+
+      <!-- begin register -->
+      <div class="API-register hidden">
+        <div class="register-login">
+          <h4>Register</h4>
+          <br>
+          <form id="register" enctype="multipart/form-data" charset="utf-8">
+            <label for="username">Username</label>
+            <input type="text" name="username" placeholder="username">
+            <label for="password">Password</label>
+            <input type="password" name="password" placeholder="password">
+            <input type="submit" name="register" value="Register">
+          </form>
+          <p>Already a member? <a href="#" class="login-a2"> Login.</a></p>
+        </div>
+      </div>
+      <!-- end register -->
+
+      <!-- begin login -->
+      <div class="API-login hidden">
+        <div class="register-login">
+          <h4>Login</h4>
+          <br>
+          <form id="login" enctype="multipart/form-data" charset="utf-8">
+            <label for="username">Username</label>
+            <input name="username" type="text" placeholder="username">
+            <label for="password">Password</label>
+            <input name="password" type="password" placeholder="password">
+            <input name="login" type="submit" value="Login">
+          </form>
+          <p>First time here? <a href="#" class="register-a2"> Register.</a></p>
+        </div>
+      </div>
+      <!-- end login -->
+
+      <!-- create guide -->
+      <div id="createGuideContainer" data-pollid="">
+        <form id="createNewGuide">
+          <label for="guideTitle">Guide Title</label>
+          <input class="u-full-width" type="text" placeholder="Guide..." id="guideTitle" name="title">
+          <label for="playerRace">Player Race</label>
+          <select class="u-full-width" id="playerRace">
+            <option value="Terran">Terran</option>
+            <option value="Protoss">Protoss</option>
+            <option value="Zerg">Zerg</option>
+          </select>
+          <br>
+          <label for="matchup">Matchup</label>
+          <select class="u-full-width" id="matchup" name="matchup">
+            <option value="TvT">TvT</option>
+            <option value="TvP">TvP</option>
+            <option value="TvZ">TvZ</option>
+            <option value="PvT">PvT</option>
+            <option value="PvP">PvP</option>
+            <option value="PvZ">PvZ</option>
+            <option value="ZvT">ZvT</option>
+            <option value="ZvP">ZvP</option>
+            <option value="ZvZ">ZvZ</option>
+            <option value="TvT / TvP">TvT / TvP</option>
+            <option value="TvT / TvZ">TvT / TvZ</option>
+            <option value="TvP / TvZ">TvP / TvZ</option>
+            <option value="PvP / PvT">PvP / PvT</option>
+            <option value="PvP / PvZ">PvP / PvZ</option>
+            <option value="PvT / PvZ">PvT / PvZ</option>
+            <option value="ZvZ / ZvT">ZvZ / ZvT</option>
+            <option value="ZvZ / ZvP">ZvZ / ZvP</option>
+            <option value="ZvT / ZvP">ZvT / ZvP</option>
+            <option value="TvT / TvP / TvZ">TvT / TvP / TvZ</option>
+            <option value="PvP / PvT / PvZ">PvP / PvT / PvZ</option>
+            <option value="ZvZ / ZvT / ZvP">ZvZ / ZvT / ZvP</option>
+          </select>
+          <br>
+          <label for="descriptionInput">Description</label>
+          <textarea data-provide="markdown" class="u-full-width" placeholder="Description..." id="descriptionInput" name="desc"></textarea>
+          <input class="button-primary" type="submit" value="Create!">
+        </form>
+      </div>
+      <!-- end of create guide -->
+
+      <!-- show guides table -->
+      <div id = "show-all-guides">
+        <table id="showAllGuidesTable" class = "table table-hover">
+          <thead>
+            <th> Player Race </th>
+            <th> Guide </th>
+            <th> Matchup </th>
+            <th> Created On </th>
+          </thead>
+          <tbody id = "showAllGuides">
+            <tr>
+            </tr>
+          </tbody>
+        </table>
+
+          <!-- show all guides hbs template -->
+        <script id = "allGuidesHandlebars" type = "text/x-handlebars-template">
+          {{#each guides}}
+            <tr>
+              <td>{{playerRace}}</td>
+              <td>{{title}}</td>
+              <td>{{matchup}}</td>
+              <td>{{date}} by {{author}}</td>
+              <td><button class="show-guide-button" data-id={{_id}}> Show Guide </button> </td>
+            </tr>
+          {{/each}}
+        </script>
+        <!-- end of show all guides hbs template -->
+
+      </div>
+      <!-- end of show guides table -->
+
+       <!-- UPDATE guide -->
+      <div id="updateGuideContainer">
+        <form id="updateGuide">
+          <label for="guideTitle">Edit Guide</label>
+          <input class="u-full-width" type="text" placeholder="Guide Title..." id="guideTitle" name="title">
+          <label for="playerRace">Player Race</label>
+          <select class="u-full-width" id="playerRace">
+            <option value="Terran">Terran</option>
+            <option value="Protoss">Protoss</option>
+            <option value="Zerg">Zerg</option>
+          </select>
+          <br>
+          <label for="matchup">Matchup</label>
+          <select class="u-full-width" id="matchup" name="matchup">
+            <option value="TvT">TvT</option>
+            <option value="TvP">TvP</option>
+            <option value="TvZ">TvZ</option>
+            <option value="PvT">PvT</option>
+            <option value="PvP">PvP</option>
+            <option value="PvZ">PvZ</option>
+            <option value="ZvT">ZvT</option>
+            <option value="ZvP">ZvP</option>
+            <option value="ZvZ">ZvZ</option>
+            <option value="TvT / TvP">TvT / TvP</option>
+            <option value="TvT / TvZ">TvT / TvZ</option>
+            <option value="TvP / TvZ">TvP / TvZ</option>
+            <option value="PvP / PvT">PvP / PvT</option>
+            <option value="PvP / PvZ">PvP / PvZ</option>
+            <option value="PvT / PvZ">PvT / PvZ</option>
+            <option value="ZvZ / ZvT">ZvZ / ZvT</option>
+            <option value="ZvZ / ZvP">ZvZ / ZvP</option>
+            <option value="ZvT / ZvP">ZvT / ZvP</option>
+            <option value="TvT / TvP / TvZ">TvT / TvP / TvZ</option>
+            <option value="PvP / PvT / PvZ">PvP / PvT / PvZ</option>
+            <option value="ZvZ / ZvT / ZvP">ZvZ / ZvT / ZvP</option>
+          </select>
+          <br>
+          <label for="descriptionInput">Description</label>
+          <textarea data-provide="markdown" class="u-full-width" placeholder="Description..." id="descriptionInput" name="desc"></textarea>
+          <input class="button-primary" type="submit" value="Update!">
+        </form>
+      </div>
+      <!-- end of update guide -->
+
+      <div id="single-guide" class="singleGuideContainer">
+      </div>
+
+      <script id="show-one-guide" type = "text/x-handlebars-template">
+        <h2>{{title}}</h2>
+        <h4>{{playerRace}} : {{matchup}}</h4>
+        <br>
+        <h3>Description</h3>
+        <br>
+        <p>{{description}}</p>
+        <br>
+        <button id="edit-guide" class="edit-button" data-id={{_id}}>Edit</button>
+        <button id="delete-guide" class="delete-button" data-id={{_id}}>Delete</button>
+      </script>
+
+    </div>
+
+  </body>
+</html>
