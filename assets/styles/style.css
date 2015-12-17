@@ -156,27 +156,13 @@ a {
     color: #2d6987;
 }
 
-/* Register and Login */
-.API-register {
-  /*position: absolute;*/
+.API-login, .API-register {
   top: 50%;
   left: 50%;
-  margin-top: -50px;
-  margin-left: -50px;
+  margin-top: 50px;
+  margin-left: 37%;
   width: 25%;
   height: 37%;
-  /*background-color: rgba(0,0,0,0.5);*/
-}
-
-.API-login {
-   /*position: absolute;*/
-  top: 50%;
-  left: 50%;
-  margin-top: -50px;
-  margin-left: -50px;
-  width: 25%;
-  height: 37%;
-  /*background-color: rgba(0,0,0,0.5);*/
 }
 
 .register-login {
