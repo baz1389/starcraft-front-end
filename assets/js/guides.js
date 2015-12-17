@@ -51,9 +51,6 @@ $(document).ready(function() {
     e.preventDefault();
     var credentials = form2object(this);
 
-    // hide login container
-    $('.API-login').slideUp();
-    $('.API-register').hide();
     pageController.showVisualButtons();
     // fade up user-messages
     $('.user-messages').fadeIn();

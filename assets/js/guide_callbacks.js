@@ -29,10 +29,10 @@ var loginCb = function (error, data) {
     console.error(error);
     $(".user-messages").html("<strong>Error! Login failed!</strong>");
     return;
-  } else {
-    // console.log(JSON.stringify(data, null, 4));
-    console.log("Logged in!");
   }
+  $('.API-login').slideUp();
+  $('.API-register').hide();
+  console.log("Logged in!");
   // guide_api.readAll(readAllCb);
 };
 
