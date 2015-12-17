@@ -39,7 +39,7 @@ $(document).ready(function() {
     var credentials = form2object(this);
     guide_api.register(credentials, regCb);
     console.log("successful register!");
-     // hide register container
+
     $('.API-register').slideUp();
     $('.API-login').fadeIn('fast');
 
@@ -103,6 +103,7 @@ $(document).ready(function() {
     $('#show-all-guides').hide();
     $('.API-register').hide();
     $('.API-login').hide();
+    $('.user-messages').empty();
   });
 
   // CREATE A GUIDE
@@ -122,7 +123,7 @@ $(document).ready(function() {
       description: description
     }
 
-    console.log('the form will send ' + JSON.stringify(data, null, 4));
+    // console.log('the form will send ' + JSON.stringify(data, null, 4));
 
     guide_api.createGuide(data, createCb);
 
@@ -136,7 +137,7 @@ $(document).ready(function() {
       return;
     }
 
-    console.log("guide id is " + id);
+    // console.log("guide id is " + id);
     guide_api.readOne(id, readOneCb);
   });
 
@@ -152,9 +153,9 @@ $(document).ready(function() {
 
   $("#updateGuide").on("submit", function(e) {
     e.preventDefault();
-    debugger;
+
       var id = $("#edit-guide").data("id");
-    console.log($(this).data("id"));
+    // console.log($(this).data("id"));
 
     var target = e.target;
     var title = target.guideTitle.value;
@@ -177,7 +178,7 @@ $(document).ready(function() {
   $("#single-guide").on("click", "#delete-guide", function(e) {
     e.preventDefault();
     var id = $(this).data("id");
-    console.log($(this).data("id"));
+    // console.log($(this).data("id"));
 
     guide_api.deleteGuide(id, deleteCb);
   });

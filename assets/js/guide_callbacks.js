@@ -28,9 +28,10 @@ var createCb = function(error, data) {
     $(".user-messages").html("<strong>Error! Guide creation failed!</strong>");
     return;
   }
-  console.log('successful create, data is ' + JSON.stringify(data, null, 4));
+  // console.log('successful create, data is ' + JSON.stringify(data, null, 4));
   guide_api.readAll(readAllCb);
   pageController.showGuides();
+  $('.user-messages').html("Guide created!");
 };
 
 var readAllCb = function(error, data) {
@@ -41,7 +42,6 @@ var readAllCb = function(error, data) {
   }
   $("#showAllGuides").empty();
   var template = Handlebars.compile($('#allGuidesHandlebars').html());
-  // console.log("result is " + JSON.stringify(data, null, 4));
   var newHTML = template({guides: data});
   $('#showAllGuides').show;
   $('#show-all-guides').show;
@@ -62,7 +62,6 @@ var readOneCb = function(error, data) {
   $("#single-guide").show();
 
   var template = Handlebars.compile($("#show-one-guide").html());
-  console.log(JSON.stringify(data, null, 4));
   var newHTML = template(data[0]);
 
   $("#single-guide").show();
@@ -77,9 +76,10 @@ var updateCb = function(error, data) {
     $(".user-messages").html("<strong>Error! Guide could not be updated!</strong>");
     return;
   }
-  debugger;
+
   guide_api.readAll(readAllCb);
   pageController.showGuides();
+  $('.user-messages').html("Guide updated!");
 };
 
 var deleteCb = function(error, data) {
@@ -91,4 +91,5 @@ var deleteCb = function(error, data) {
   $("single-guide").empty().hide();
   guide_api.readAll(readAllCb);
   pageController.showGuides();
+  $('.user-messages').html("Guide deleted!");
 };

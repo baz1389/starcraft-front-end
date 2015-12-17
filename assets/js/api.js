@@ -1,7 +1,7 @@
 'use strict';
 
 var guide_api = {
-  url: 'http://localhost:3000',
+  url: 'http://localhost:3000', //heroku url here with https and .com (no /)
 
   ajax: function(config, cb) {
     $.ajax(config).done(function(data, textStatus, jqxhr) {
