@@ -64,7 +64,17 @@ $(document).ready(function() {
   });
 
   //LOGOUT
+  $('.logout').on('click', function(e) {
+    e.preventDefault();
+    guide_api.logout(function(error, data){
+      if(error){
+        console.error(error);
+      }
 
+      $('.user-messages').html("Logged out!");
+
+    });
+  });
 
 
   // shows table with all guides

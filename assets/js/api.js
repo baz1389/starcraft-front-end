@@ -1,7 +1,5 @@
 'use strict';
 
-// api HTTP requests/responses
-
 var guide_api = {
   url: 'http://localhost:3000',
 
@@ -31,16 +29,11 @@ var guide_api = {
     }, callback);
   },
 
-
-  //Authenticated api actions
-
-  // logout function is a stretch goal
-  logout: function(id, callback) {
+  logout: function(callback) {
     this.ajax({
       method: 'POST',
       url: this.url + '/logout',
       contentType: 'application/json; charset=utf-8',
-      data: JSON.stringify(id),
     }, callback);
   },
 
