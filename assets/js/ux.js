@@ -22,13 +22,6 @@ var pageController = {
     $('#createGuideContainer').hide();
     $('#updateGuideContainer').hide();
     guide_api.readAll(readAllCb);
-  },
-
-  showVisualButtons: function() {
-    $('.showTable').show();
-    $('.showCreate').show();
-    $('.logout').show();
-  },
-
+  }
 };
 

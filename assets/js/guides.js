@@ -50,7 +50,6 @@ $(document).ready(function() {
   $('#login').on('submit', function(e) {
     e.preventDefault();
     var credentials = form2object(this);
-    console.log(credentials);
     var user = credentials.username;
 
     var loginCb = function (error, data) {
@@ -65,15 +64,14 @@ $(document).ready(function() {
       $('.API-login').slideUp();
       $('.API-register').hide();
       console.log("Logged in!");
-      // guide_api.readAll(readAllCb);
+      pageController.showGuides();
     };
 
-    pageController.showVisualButtons();
     $('.user-messages').text('Logging in. Please wait.');
     $('.user-messages').fadeIn();
     $('#show-all-guides').show();
     guide_api.login(credentials, loginCb);
-    // $('.user-messages').html('<p>Welcome, ' + credentials.username + '!</p>');
+
   });
 
   //LOGOUT
