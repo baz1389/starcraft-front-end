@@ -38,7 +38,6 @@ $(document).ready(function() {
     e.preventDefault();
     var credentials = form2object(this);
     guide_api.register(credentials, regCb);
-    console.log("successful register!");
 
     $('.API-register').slideUp();
     $('.API-login').fadeIn('fast');
@@ -63,7 +62,6 @@ $(document).ready(function() {
       $('.user-messages').html('<p>Welcome, ' + user + '!</p>');
       $('.API-login').slideUp();
       $('.API-register').hide();
-      console.log("Logged in!");
       pageController.showGuides();
     };
 
@@ -153,7 +151,7 @@ $(document).ready(function() {
     var description = $('#single-guide > p').text();
     var playerRace = $('#single-guide > h4').text().split(' ');
     var matchup = $('#single-guide > h4').text().split(' ');
-    debugger;
+
     $('#updateGuide > #guideTitle').val(title);
     $('#updateGuide > #descriptionInput').val(description.replace(/\n/g, '<br />'));
     $('#updateGuide > #playerRace').val(playerRace[0]);
