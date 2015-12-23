@@ -1,7 +1,7 @@
 'use strict';
 
 var guide_api = {
-  url: 'https://sheltered-refuge-9436.herokuapp.com', //http://localhost:3000
+  url: 'http://localhost:3000', //'http://localhost:3000' //'https://sheltered-refuge-9436.herokuapp.com'
 
   ajax: function(config, cb) {
     $.ajax(config).done(function(data, textStatus, jqxhr) {

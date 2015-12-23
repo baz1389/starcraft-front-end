@@ -153,7 +153,7 @@ $(document).ready(function() {
     var matchup = $('#single-guide > h4').text().split(' ');
 
     $('#updateGuide > #guideTitle').val(title);
-    $('#updateGuide > #descriptionInput').val(description.replace(/\n/g, '<br />'));
+    $('#updateGuide > #descriptionInput').val(description.replace(/\-/g, '<br/>-'));
     $('#updateGuide > #playerRace').val(playerRace[0]);
 
     if(matchup.length === 3) {
