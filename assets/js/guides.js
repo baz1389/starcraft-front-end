@@ -143,10 +143,28 @@ $(document).ready(function() {
 
   //Shows UPDATE form
   $("#single-guide").on("click", "#edit-guide", function(e) {
-
+    e.preventDefault();
     $('#single-guide').hide();
     $('#updateGuideContainer').show();
     $('#updateGuide').show();
+    var id = $(e.target).data("id");
+
+    var title = $('#single-guide > h2').text();
+    var description = $('#single-guide > p').text();
+    var playerRace = $('#single-guide > h4').text().split(' ');
+    var matchup = $('#single-guide > h4').text().split(' ');
+    debugger;
+    $('#updateGuide > #guideTitle').val(title);
+    $('#updateGuide > #descriptionInput').val(description.replace(/\n/g, '<br />'));
+    $('#updateGuide > #playerRace').val(playerRace[0]);
+
+    if(matchup.length === 3) {
+      $('#updateGuide > #matchup').val(matchup[2]);
+    }else if (matchup.length === 5) {
+      $('#updateGuide > #matchup').val(matchup[2] + ' ' + matchup[3] + ' ' + matchup[4]);
+    }else if (matchup.length === 7) {
+      $('#updateGuide > #matchup').val(matchup[2] + ' ' + matchup[3] + ' ' + matchup[4] + ' ' + matchup[5] + ' ' + matchup[6]);
+    }
 
   });
 
