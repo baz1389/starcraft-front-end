@@ -102,6 +102,7 @@ $(document).ready(function() {
     $('.API-register').hide();
     $('.API-login').hide();
     $('.user-messages').empty();
+    $('#updateGuideContainer').hide();
   });
 
   // CREATE A GUIDE
@@ -153,9 +154,8 @@ $(document).ready(function() {
     var matchup = $('#single-guide > h4').text().split(' ');
 
     $('#updateGuide > #guideTitle').val(title);
-    $('#updateGuide > #descriptionInput').val(description.replace(/\-/g, '<br/>-'));
+    $('#updateGuide > #descriptionInput').val(description.replace(/\-/g, '\n<br> -').replace(/(<br\ ?\/?>)+/g, ''));
     $('#updateGuide > #playerRace').val(playerRace[0]);
-
     if(matchup.length === 3) {
       $('#updateGuide > #matchup').val(matchup[2]);
     }else if (matchup.length === 5) {
