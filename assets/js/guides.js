@@ -103,6 +103,10 @@ $(document).ready(function() {
     $('.API-login').hide();
     $('.user-messages').empty();
     $('#updateGuideContainer').hide();
+    $('#guideTitle').val('');
+    $('#playerRace').val('');
+    $('#matchup').val('');
+    $('#descriptionInput').val('');
   });
 
   // CREATE A GUIDE
