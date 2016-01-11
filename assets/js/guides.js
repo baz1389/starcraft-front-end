@@ -96,6 +96,10 @@ $(document).ready(function() {
 
   // shows create guide form
   $('.showCreate').on('click', function(e) {
+    $('#guideTitle').val('');
+    $('#playerRace').val('');
+    $('#matchup').val('');
+    $('#descriptionInput').val('');
     $('#createGuideContainer').show();
     $('#single-guide').hide();
     $('#show-all-guides').hide();
@@ -103,10 +107,7 @@ $(document).ready(function() {
     $('.API-login').hide();
     $('.user-messages').empty();
     $('#updateGuideContainer').hide();
-    $('#guideTitle').val('');
-    $('#playerRace').val('');
-    $('#matchup').val('');
-    $('#descriptionInput').val('');
+
   });
 
   // CREATE A GUIDE
