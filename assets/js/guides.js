@@ -37,12 +37,21 @@ $(document).ready(function() {
   $('#register').on('submit', function(e) {
     e.preventDefault();
     var credentials = form2object(this);
+
+    var regCb = function (error, data) {
+      if (error) {
+        console.error(error);
+        $(".user-messages").html("<strong>Error! Registration failed!</strong>");
+        return;
+      }
+      $('.user-messages').html('<p>Successfully registered as ' + credentials.username + '!</p>');
+      $('.API-register').slideUp();
+      $('.API-login').fadeIn('fast');
+    };
+
+    $('.user-messages').text('Registering. Please wait.');
     guide_api.register(credentials, regCb);
 
-    $('.API-register').slideUp();
-    $('.API-login').fadeIn('fast');
-
-    $('.user-messages').html('<p>Successfully registered as ' + credentials.username + '!</p>');
   });
 
   // LOGIN
@@ -90,6 +99,7 @@ $(document).ready(function() {
   $('.showTable').on('click', function(e) {
     $('.API-register').hide();
     $('.API-login').hide();
+    $(".user-messages").html('');
     pageController.showGuides();
     guide_api.readAll(readAllCb);
   });
