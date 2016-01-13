@@ -11,17 +11,6 @@ var form2object = function(form) {
   return data;
 };
 
-// registration callback
-var regCb = function (error, data) {
-  if (error) {
-    console.error(error);
-    $(".user-messages").html("<strong>Error! Registration failed!</strong>");
-    return;
-  }
-  console.log('data is ' + data);
-  console.log(JSON.stringify(data, null, 4));
-};
-
 var createCb = function(error, data) {
   if (error) {
     console.error(error);
